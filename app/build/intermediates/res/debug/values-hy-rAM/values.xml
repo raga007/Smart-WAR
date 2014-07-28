@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-hy-rAM/values.xml -->
+<<<<<<< Updated upstream
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-hy-rAM/values.xml -->
+=======
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values-hy-rAM/values.xml -->
+>>>>>>> Stashed changes
     <eat-comment />
 
     <plurals name="abbrev_in_num_days">
@@ -80,7 +84,7 @@
         <item msgid="4869870056547896011" quantity="one">"1 վայրկյան առաջ"</item>
         <item msgid="3903706804349556379" quantity="other">"<ns1:g id="COUNT">%d</ns1:g> վայրկյան առաջ"</item>
     </plurals>
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/res/values-hy-rAM/auth_strings.xml -->
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/res/values-hy-rAM/auth_strings.xml -->
     <eat-comment />
 
     <string name="auth_client_needs_enabling_title" msgid="3983201110833868073">"Հավելվածը պահանջում է միացնել Google Play ծառայությունները:"</string>
@@ -89,7 +93,7 @@
     <string name="auth_client_play_services_err_notification_msg" msgid="3635065018897986478">"Google Play ծառայությունների սխալ"</string>
     <string name="auth_client_requested_by_msg" msgid="6304135633531965756">"<ns1:g id="APP_NAME">%1$s</ns1:g>-ի հարցմամբ"</string>
     <string name="auth_client_using_bad_version_title" msgid="2534454398764507874">"Հավելվածը փորձել է կիրառել Google Play ծառայությունների վատ տարբերակը:"</string>
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/res/values-hy-rAM/common_strings.xml -->
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/res/values-hy-rAM/common_strings.xml -->
     <eat-comment />
 
     <string name="common_google_play_services_enable_button" msgid="4181637455539816337">"Միացնել Google Play ծառայությունները"</string>
@@ -117,7 +121,7 @@
     <string name="common_google_play_services_update_title" msgid="6006316683626838685">"Նորացրեք Google Play ծառայությունները"</string>
     <string name="common_signin_button_text" msgid="9071884888741449141">"Մուտք գործել"</string>
     <string name="common_signin_button_text_long" msgid="2429381841831957106">"Մուտք գործեք Google-ով"</string>
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-hy-rAM/values.xml -->
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-hy-rAM/values.xml -->
     <eat-comment />
 
     <string name="preposition_for_date" msgid="9093949757757445117">"<ns1:g id="DATE">%s</ns1:g>-ին"</string>

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-it/values.xml -->
+<<<<<<< Updated upstream
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-it/values.xml -->
+=======
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values-it/values.xml -->
+>>>>>>> Stashed changes
     <eat-comment />
 
     <plurals name="abbrev_in_num_days">
@@ -80,7 +84,7 @@
         <item msgid="4869870056547896011" quantity="one">"1 secondo fa"</item>
         <item msgid="3903706804349556379" quantity="other">"<ns1:g id="COUNT">%d</ns1:g> secondi fa"</item>
     </plurals>
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/res/values-it/auth_strings.xml -->
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/res/values-it/auth_strings.xml -->
     <eat-comment />
 
     <string name="auth_client_needs_enabling_title" msgid="3983201110833868073">"Un\'applicazione richiede l\'attivazione di Google Play Services."</string>
@@ -89,7 +93,7 @@
     <string name="auth_client_play_services_err_notification_msg" msgid="3635065018897986478">"Errore Google Play Services"</string>
     <string name="auth_client_requested_by_msg" msgid="6304135633531965756">"Richiesta da <ns1:g id="APP_NAME">%1$s</ns1:g>"</string>
     <string name="auth_client_using_bad_version_title" msgid="2534454398764507874">"Un\'app ha tentato di usare una versione non valida di Play Services."</string>
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/res/values-it/common_strings.xml -->
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/res/values-it/common_strings.xml -->
     <eat-comment />
 
     <string name="common_google_play_services_enable_button" msgid="4181637455539816337">"Attiva Google Play Services"</string>
@@ -117,19 +121,19 @@
     <string name="common_google_play_services_update_title" msgid="6006316683626838685">"Aggiorna Google Play Services"</string>
     <string name="common_signin_button_text" msgid="9071884888741449141">"Accedi"</string>
     <string name="common_signin_button_text_long" msgid="2429381841831957106">"Accedi con Google"</string>
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-it/values.xml -->
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-it/values.xml -->
     <eat-comment />
 
     <string name="date_time">%2$s %1$s</string>
     <string name="preposition_for_date" msgid="9093949757757445117">"in data <ns1:g id="DATE">%s</ns1:g>"</string>
     <string name="preposition_for_time" msgid="5506831244263083793">"alle ore <ns1:g id="TIME">%s</ns1:g>"</string>
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.github.chrisbanes.actionbarpulltorefresh/library/0.9.9/res/values-it/values.xml -->
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/com.github.chrisbanes.actionbarpulltorefresh/library/0.9.9/res/values-it/values.xml -->
     <eat-comment />
 
     <string name="pull_to_refresh_pull_label">Tira per aggiornare…</string>
     <string name="pull_to_refresh_refreshing_label">Caricamento…</string>
     <string name="pull_to_refresh_release_label">Rilascia per aggionare…</string>
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-it/values.xml -->
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-it/values.xml -->
     <eat-comment />
 
     <string name="relative_time" msgid="1818557177829411417">"<ns1:g id="DATE">%1$s</ns1:g>, <ns1:g id="TIME">%2$s</ns1:g>"</string>

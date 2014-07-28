@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-ko/values.xml -->
+<<<<<<< Updated upstream
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-ko/values.xml -->
+=======
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values-ko/values.xml -->
+>>>>>>> Stashed changes
     <eat-comment />
 
     <plurals name="abbrev_in_num_days">
@@ -80,7 +84,7 @@
         <item msgid="4869870056547896011" quantity="one">"1초 전"</item>
         <item msgid="3903706804349556379" quantity="other">"<ns1:g id="COUNT">%d</ns1:g>초 전"</item>
     </plurals>
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/res/values-ko/auth_strings.xml -->
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/res/values-ko/auth_strings.xml -->
     <eat-comment />
 
     <string name="auth_client_needs_enabling_title" msgid="3983201110833868073">"Google Play 서비스를 사용하도록 설정해야 하는 애플리케이션입니다."</string>
@@ -89,7 +93,7 @@
     <string name="auth_client_play_services_err_notification_msg" msgid="3635065018897986478">"Google Play 서비스 오류"</string>
     <string name="auth_client_requested_by_msg" msgid="6304135633531965756">"<ns1:g id="APP_NAME">%1$s</ns1:g>에서 요청"</string>
     <string name="auth_client_using_bad_version_title" msgid="2534454398764507874">"애플리케이션에서 잘못된 버전의 Google Play 서비스를 사용하려고 했습니다."</string>
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/res/values-ko/common_strings.xml -->
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/res/values-ko/common_strings.xml -->
     <eat-comment />
 
     <string name="common_google_play_services_enable_button" msgid="4181637455539816337">"Google Play 서비스 사용"</string>
@@ -117,19 +121,19 @@
     <string name="common_google_play_services_update_title" msgid="6006316683626838685">"Google Play 서비스 업데이트"</string>
     <string name="common_signin_button_text" msgid="9071884888741449141">"로그인"</string>
     <string name="common_signin_button_text_long" msgid="2429381841831957106">"Google 계정으로 로그인"</string>
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-ko/values.xml -->
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-ko/values.xml -->
     <eat-comment />
 
     <string name="date_time">%1$s %2$s</string>
     <string name="preposition_for_date" msgid="9093949757757445117">"<ns1:g id="DATE">%s</ns1:g>"</string>
     <string name="preposition_for_time" msgid="5506831244263083793">"<ns1:g id="TIME">%s</ns1:g>"</string>
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.github.chrisbanes.actionbarpulltorefresh/library/0.9.9/res/values-ko/values.xml -->
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/com.github.chrisbanes.actionbarpulltorefresh/library/0.9.9/res/values-ko/values.xml -->
     <eat-comment />
 
     <string name="pull_to_refresh_pull_label">당겨서 새로 고침…</string>
     <string name="pull_to_refresh_refreshing_label">로드 중…</string>
     <string name="pull_to_refresh_release_label">놓아서 새로 고침…</string>
-    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-ko/values.xml -->
+    <!-- From: file:/Users/jsklar/smart-war/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values-ko/values.xml -->
     <eat-comment />
 
     <string name="relative_time" msgid="1818557177829411417">"<ns1:g id="DATE">%1$s</ns1:g>, <ns1:g id="TIME">%2$s</ns1:g>"</string>
