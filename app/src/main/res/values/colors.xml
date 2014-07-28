@@ -4,31 +4,67 @@
     <color name="holo_dark_green">#99CC00</color>
 
     <!-- General colors used everywhere in the app -->
-    <color name="transparent">#00000000</color>
-
-    <!-- colors used all over the app -->
-    <color name="app_base_color">#0DA086</color>
     <color name="app_text_color">#565656</color>
+    <color name="transparent">#00000000</color>
+    <color name="list_divider">#D6D7D6</color>
+    <color name="disabled_filter">#AAA</color>
+    <color name="semi_light_gray">#CCC</color>
+    <color name="gray">#666</color>
+    <color name="dark_gray">#333</color>
+    <color name="black">#000</color>
+    <color name="default_text">#000</color>
+    <color name="default_button_text_click">#FFFFFF</color>
+    <color name="default_layout_border">#FF9EB04D</color>
+    <color name="default_text_view">#FF1F7146</color>
+    <color name="light_green_text_view">#FF82AD70</color>
+    <color name="heading_text_view">#FF323232</color>
+    <color name="default_element_background">#FFFFFFFF</color>
+    <color name="histogram_bar_background">#EFEFEF</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="list_click_bg">#FFBBBBBB</color>
+    <color name="dark_opaque_black">#CC000000</color>
+    <color name="home_list_text_view">#FF676767</color>
+    <color name="light_gray">#FFDDDDDD</color>
+    <color name="ta_green">#589442</color>
+    <color name="opaque_black">#77000000</color>
+    <color name="error_edittext_bg">#FFFFFFDD</color>
+    <color name="error_edittext">#CC6600</color>
+    <color name="error_border">#CC6600</color>
+    <color name="meta_price_text_color">#f77609</color>
+    <color name="meta_price_list_text_color">#ca6f21</color>
+    <color name="dark_red">#990000</color>
+    <color name="dark_gray_text">#777777</color>
+    <color name="gray_text">#666666</color>
+    <color name="neutral_gray_text">#999999</color>
+    <color name="light_gray_text">#BBBBBB</color>
+    <color name="samsung_button_text">#EBEBEB</color>
+    <color name="hotel_star_yellow">#FBD400</color>
+    <color name="gray_separator">#999999</color>
+    <color name="bl_orange">#C60</color>
+    <color name="current_location">#336699</color>
+    <color name="poi_detail_header_bg">#EEEEEE</color>
+    <color name="poi_detail_dark_gray_text">#444444</color>
+    <color name="infinite_calendar_background_clear_weekdays">#FFFFFFFF</color>
+    <color name="infinite_calendar_background_dark_weekdays">#FFEEEEEE</color>
+    <color name="infinite_calendar_sunday_font_title">#FF666666</color>
+    <color name="infinite_calendar_font_enabled">#FF000000</color>
+    <color name="infinite_calendar_font_day_selected">#FFFFFFFF</color>
+    <color name="infinite_calendar_borders">#CCCCCC</color>
+    <color name="gray_bg">#EEE</color>
+    <color name="transparent_black_overlay">#37000000</color>
+    <color name="dark_transparent_black_overlay">#BB000000</color>
+    <color name="rac_offer_red">#f37A19</color>
+    <color name="rac_offer_red_background">#bc502e</color>
 
-    <!-- colors used in the nomination screen -->
-    <color name="comment_like_panel_bg">#ACACAC</color>
-    <color name="nomination_screen_divider_color">#E7E7E7</color>
+    <color name="gray_toolbar">#999999</color>
+    <color name="gray_toolbar_disabled">#555555</color>
+    <color name="inner_nearby_circle">#10E56C1B</color>
+    <color name="outer_nearby_circle">#CCE56C1B</color>
+    <color name="gray_filter_selector_color">#999</color>
+    <color name="disabled_text_color">#999</color>
 
-    <!-- colors used in the home page -->
-    <color name="home_tab_bar_color">#F2FAF8</color>
-    <color name="home_tab_all_tab_color">#585858</color>
-    <color name="home_tab_mine_tab_color">#009E83</color>
-    <color name="home_tab_received_tab_color">#AB7038</color>
-    <color name="home_tab_friends_tab_color">#3163A5</color>
-    <color name="home_tab_action_bar_color">#00A187</color>
-    <color name="home_action_bar_text_color">#E5F1EE</color>
-    <color name="home_tabbar_border_color">#45B29D</color>
-
-    <!-- colors used in the side menu -->
-    <color name="logout_button_text_color">#E8F4F1</color>
-    <color name="logout_button_background_color">#00A187</color>
-    <color name="avatar_border_color">#0DA086</color>
-    <color name="user_name_color">#ACACAC</color>
-    <color name="option_button_border_color">#A1DBD0</color>
+    <color name="poi_closed_banner">#D20028</color>
+    <color name="text_red">#D20028</color>
+    <color name="red_hover">#E37489</color>
 
 </resources>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/ratingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/light_gray"
+            android:padding="10dip" >
+
+            <TextView
+                android:id="@+id/rateMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2.5dip"
+                android:layout_marginTop="5dip"
+                android:gravity="center"
+                android:text="Tap a circle to rate"
+                android:textColor="@color/light_green_text_view"
+                android:textSize="16sp" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/reviewRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="5dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:max="5"
+                android:numStars="5"
+                android:stepSize="1" />
+        </LinearLayout>
+
+        <View style="@style/line_separator" />
+
+        <LinearLayout
+            android:id="@+id/dateVisitedLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/clickable_layout"
+            android:focusable="true"
+            android:focusableInTouchMode="false"
+            android:orientation="horizontal"
+            android:paddingBottom="15dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="15dip" >
+
+            <TextView
+                android:id="@+id/dateVisited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/text_title_prompts"
+                android:text="November 16, 2014" />
+
+            <TextView
+                android:id="@+id/timeVisited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="4:00 PM"
+                android:textColor="@color/ta_green" />
+        </LinearLayout>
+
+        <View style="@style/line_separator" />
+
+        <LinearLayout
+            android:id="@+id/visitTypeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/clickable_layout"
+            android:focusable="true"
+            android:focusableInTouchMode="false"
+            android:orientation="horizontal"
+            android:paddingBottom="15dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="15dip" >
+
+            <TextView
+                android:id="@+id/visitTypeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/text_title_prompts"
+                android:text="Type of visit" />
+
+            <TextView
+                android:id="@+id/visitType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="Friends"
+                android:textColor="@color/ta_green" />
+        </LinearLayout>
+
+        <View style="@style/line_separator" />
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_no_border_selector"
+            android:hint="Title"
+            android:imeOptions="actionNext"
+            android:inputType="textCapSentences"
+            android:maxLength="120"
+            style="@style/edittext"
+            android:singleLine="true" />
+        <View style="@style/line_separator" />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_no_border_selector"
+            android:gravity="left"
+            android:hint="Description"
+            android:inputType="textCapSentences|textMultiLine"
+            android:minLines="4"
+            style="@style/edittext"
+            android:scrollbars="vertical" />
+
+        <View style="@style/line_separator" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submitButton"
+        style="@style/green_large_button"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:text="Submit" />
+</RelativeLayout>

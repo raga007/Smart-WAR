@@ -12,7 +12,7 @@ public class SmartWarInitialize extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        CalligraphyConfig.initDefault("fonts/Roboto-Thin.ttf", R.attr.fontPath);
+        CalligraphyConfig.initDefault("fonts/RobotoSlab-Regular.ttf", R.attr.fontPath);
         //Initialize the Joda Time Library
         ResourceZoneInfoProvider.init(this);
     }

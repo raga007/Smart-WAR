@@ -2,7 +2,30 @@
 <resources>
 
     <string name="app_name">Smart WAR</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <!--Excellent-->
+    <string name="mobile_excellent">Excellent</string>
+    <!--Very good-->
+    <string name="mobile_very_good">Very good</string>
+    <!--Average-->
+    <string name="mobile_average">Average</string>
+    <!--Poor-->
+    <string name="mobile_poor">Poor</string>
+    <!--Terrible-->
+    <string name="mobile_terrible">Terrible</string>
+    <string name="mobile_trip_type_business_8e0">Business</string>
+    <!--Couples-->
+    <string name="mobile_trip_type_couples_8e0">Couples</string>
+    <!--Family-->
+    <string name="mobile_trip_type_family_8e0">Family</string>
+    <!--Friends-->
+    <string name="mobile_trip_type_friends_8e0">Friends</string>
+    <!--Solo-->
+    <string name="mobile_trip_type_solo_8e0">Solo</string>
+    <!--Family with teenagers-->
+    <string name="mobile_trip_type_family_with_teenagers_8e0">Family with teenagers</string>
+    <!--Family with young children-->
+    <string name="mobile_trip_type_family_with_young_children_8e0">Family with young children</string>
 
 </resources>

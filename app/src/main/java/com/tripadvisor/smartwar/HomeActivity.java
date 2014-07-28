@@ -17,7 +17,7 @@ public class HomeActivity extends SherlockFragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Fragment fragment = new MainMenuFragment();
+        Fragment fragment = new WriteAReviewFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.content_fragment, fragment).commit();
     }
 

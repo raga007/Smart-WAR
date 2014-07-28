@@ -18,3 +18,4 @@ public class MainMenuFragment extends SherlockFragment {
     }
 
 }
+

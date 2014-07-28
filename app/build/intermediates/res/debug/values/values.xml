@@ -46,6 +46,12 @@
     <color name="abs__bright_foreground_disabled_holo_light">#ffb2b2b2</color>
     <color name="abs__bright_foreground_holo_dark">@color/abs__background_holo_light</color>
     <color name="abs__bright_foreground_holo_light">@color/abs__background_holo_dark</color>
+    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/values/colors.xml -->
+    <eat-comment />
+
+    <color name="app_text_color">#565656</color>
+    <color name="bl_orange">#C60</color>
+    <color name="black">#000</color>
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/res/values/common_colors.xml -->
     <eat-comment />
 
@@ -59,10 +65,32 @@
     <color name="common_signin_btn_light_text_disabled">#FFAAAAAA</color>
     <color name="common_signin_btn_light_text_focused">#FF737373</color>
     <color name="common_signin_btn_light_text_pressed">@android:color/white</color>
+    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/values/colors.xml -->
+    <eat-comment />
+
+    <color name="current_location">#336699</color>
+    <color name="dark_gray">#333</color>
+    <color name="dark_gray_text">#777777</color>
+    <color name="dark_opaque_black">#CC000000</color>
+    <color name="dark_red">#990000</color>
+    <color name="dark_transparent_black_overlay">#BB000000</color>
+    <color name="default_button_text_click">#FFFFFF</color>
+    <color name="default_element_background">#FFFFFFFF</color>
+    <color name="default_layout_border">#FF9EB04D</color>
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.github.chrisbanes.actionbarpulltorefresh/library/0.9.9/res/values/values.xml -->
     <eat-comment />
 
     <color name="default_progress_bar_color">#FF33B5E5</color>
+    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/values/colors.xml -->
+    <eat-comment />
+
+    <color name="default_text">#000</color>
+    <color name="default_text_view">#FF1F7146</color>
+    <color name="disabled_filter">#AAA</color>
+    <color name="disabled_text_color">#999</color>
+    <color name="error_border">#CC6600</color>
+    <color name="error_edittext">#CC6600</color>
+    <color name="error_edittext_bg">#FFFFFFDD</color>
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/info.hoang8f/fbutton/1.0.5/res/values/values.xml -->
     <eat-comment />
 
@@ -89,10 +117,57 @@
     <color name="fbutton_color_wisteria">#8e44ad</color>
     <color name="fbutton_default_color">#3eadeb</color>
     <color name="fbutton_default_shadow_color">#ff3493c8</color>
+    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/values/colors.xml -->
+    <eat-comment />
+
+    <color name="gray">#666</color>
+    <color name="gray_bg">#EEE</color>
+    <color name="gray_filter_selector_color">#999</color>
+    <color name="gray_separator">#999999</color>
+    <color name="gray_text">#666666</color>
+    <color name="gray_toolbar">#999999</color>
+    <color name="gray_toolbar_disabled">#555555</color>
+    <color name="heading_text_view">#FF323232</color>
+    <color name="histogram_bar_background">#EFEFEF</color>
+    <color name="holo_dark_green">#99CC00</color>
+    <color name="home_list_text_view">#FF676767</color>
+    <color name="hotel_star_yellow">#FBD400</color>
+    <color name="infinite_calendar_background_clear_weekdays">#FFFFFFFF</color>
+    <color name="infinite_calendar_background_dark_weekdays">#FFEEEEEE</color>
+    <color name="infinite_calendar_borders">#CCCCCC</color>
+    <color name="infinite_calendar_font_day_selected">#FFFFFFFF</color>
+    <color name="infinite_calendar_font_enabled">#FF000000</color>
+    <color name="infinite_calendar_sunday_font_title">#FF666666</color>
+    <color name="inner_nearby_circle">#10E56C1B</color>
+    <color name="light_gray">#FFDDDDDD</color>
+    <color name="light_gray_text">#BBBBBB</color>
+    <color name="light_green_text_view">#FF82AD70</color>
+    <color name="list_click_bg">#FFBBBBBB</color>
+    <color name="list_divider">#D6D7D6</color>
+    <color name="meta_price_list_text_color">#ca6f21</color>
+    <color name="meta_price_text_color">#f77609</color>
+    <color name="neutral_gray_text">#999999</color>
+    <color name="opaque_black">#77000000</color>
+    <color name="outer_nearby_circle">#CCE56C1B</color>
+    <color name="poi_closed_banner">#D20028</color>
+    <color name="poi_detail_dark_gray_text">#444444</color>
+    <color name="poi_detail_header_bg">#EEEEEE</color>
+    <color name="rac_offer_red">#f37A19</color>
+    <color name="rac_offer_red_background">#bc502e</color>
+    <color name="red_hover">#E37489</color>
+    <color name="samsung_button_text">#EBEBEB</color>
+    <color name="semi_light_gray">#CCC</color>
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/0.4.0/res/values/values.xml -->
     <eat-comment />
 
     <color name="spb_default_color">#33b5e5</color>
+    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/values/colors.xml -->
+    <eat-comment />
+
+    <color name="ta_green">#589442</color>
+    <color name="text_red">#D20028</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_black_overlay">#37000000</color>
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/res/values/wallet_colors.xml -->
     <eat-comment />
 
@@ -109,6 +184,10 @@
     <color name="wallet_hint_foreground_holo_light">#808080</color>
     <color name="wallet_holo_blue_light">#ff33b5e5</color>
     <color name="wallet_link_text_light">#0000ee</color>
+    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/values/colors.xml -->
+    <eat-comment />
+
+    <color name="white">#FFFFFFFF</color>
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/4.4.52/res/values/admob_ads_attrs.xml -->
     <eat-comment />
 
@@ -924,7 +1003,7 @@
     <string name="abs__searchview_description_submit">Submit query</string>
     <string name="abs__searchview_description_voice">Voice search</string>
     <string name="abs__shareactionprovider_share_with">Share with</string>
-    <string name="abs__shareactionprovider_share_with_application">Share with <ns1:g id="application_name" example="Bluetooth">%s</ns1:g></string>
+    <string name="abs__shareactionprovider_share_with_application">Share with  <ns1:g id="application_name" example="Bluetooth">%s</ns1:g></string>
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/values/strings.xml -->
     <eat-comment />
 
@@ -936,7 +1015,7 @@
     <string name="common_google_play_services_enable_button" msgid="2523291102206661146">Enable Google Play services</string>
     <string name="common_google_play_services_enable_text" msgid="227660514972886228">This app won\'t work unless you enable Google Play services.</string>
     <string name="common_google_play_services_enable_title" msgid="5122002158466380389">Enable Google Play services</string>
-    <string name="common_google_play_services_error_notification_requested_by_msg">Requested by <ns1:g id="app_name">%1$s</ns1:g></string>
+    <string name="common_google_play_services_error_notification_requested_by_msg">Requested by  <ns1:g id="app_name">%1$s</ns1:g></string>
     <string name="common_google_play_services_install_button" msgid="7153882981874058840">Get Google Play services</string>
     <string name="common_google_play_services_install_text_phone" msgid="2122112764540849864">This app won\'t run without Google Play services, which are missing from your phone.</string>
     <string name="common_google_play_services_install_text_tablet" msgid="7351599665250191022">This app won\'t run without Google Play services, which are missing from your tablet.</string>
@@ -965,12 +1044,23 @@
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/values/strings.xml -->
     <eat-comment />
 
-    <string name="hello_world">Hello world!</string>
+    <string name="mobile_average">Average</string>
+    <string name="mobile_excellent">Excellent</string>
+    <string name="mobile_poor">Poor</string>
+    <string name="mobile_terrible">Terrible</string>
+    <string name="mobile_trip_type_business_8e0">Business</string>
+    <string name="mobile_trip_type_couples_8e0">Couples</string>
+    <string name="mobile_trip_type_family_8e0">Family</string>
+    <string name="mobile_trip_type_family_with_teenagers_8e0">Family with teenagers</string>
+    <string name="mobile_trip_type_family_with_young_children_8e0">Family with young children</string>
+    <string name="mobile_trip_type_friends_8e0">Friends</string>
+    <string name="mobile_trip_type_solo_8e0">Solo</string>
+    <string name="mobile_very_good">Very good</string>
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values/values.xml -->
     <eat-comment />
 
-    <string name="preposition_for_date">on <ns1:g id="date" example="May 29">%s</ns1:g></string>
-    <string name="preposition_for_time">at <ns1:g id="time" example="2:33 am">%s</ns1:g></string>
+    <string name="preposition_for_date">on  <ns1:g id="date" example="May 29">%s</ns1:g></string>
+    <string name="preposition_for_time">at  <ns1:g id="time" example="2:33 am">%s</ns1:g></string>
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.github.chrisbanes.actionbarpulltorefresh/library/0.9.9/res/values/values.xml -->
     <eat-comment />
 
@@ -980,7 +1070,7 @@
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/res/values/values.xml -->
     <eat-comment />
 
-    <string name="relative_time">"<ns1:g id="date" example="4 hours ago">%1$s</ns1:g>, <ns1:g id="time" example="11:00 am">%2$s</ns1:g>"</string>
+    <string name="relative_time">" <ns1:g id="date" example="4 hours ago">%1$s</ns1:g>,  <ns1:g id="time" example="11:00 am">%2$s</ns1:g>"</string>
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/0.4.0/res/values/values.xml -->
     <eat-comment />
 
@@ -1379,9 +1469,7 @@
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/values/styles.xml -->
     <eat-comment />
 
-    <style name="Theme.Smartwar" parent="Theme.Sherlock.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-    </style>
+    <style name="Theme.Smartwar" parent="Theme.Sherlock.Light.DarkActionBar"></style>
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/0.4.0/res/values/values.xml -->
     <eat-comment />
 
@@ -1675,6 +1763,45 @@
         <item name="android:textAppearance">@style/TextAppearance.Sherlock.Widget.TextView.SpinnerItem</item>
         <item name="android:paddingLeft">8dp</item>
         <item name="android:paddingRight">8dp</item>
+    </style>
+    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/values/styles.xml -->
+    <eat-comment />
+
+    <style name="edittext">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/semi_light_gray</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="filter_sub_text_label_style">
+        <item name="android:textColor">@color/gray_text</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="green_large_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:background">@drawable/button_green_selector</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:layout_gravity">bottom</item>
+    </style>
+
+    <style name="line_separator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/gray_separator</item>
+    </style>
+
+    <style name="reviewRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/review_ratingbar_full</item>
+        <item name="android:minHeight">44dip</item>
+        <item name="android:maxHeight">44dip</item>
+    </style>
+
+    <style name="text_title_prompts">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
 </resources>
