@@ -15,8 +15,8 @@ public class RestaurantManager {
         theQ = new ArrayList<QItem>();
     }
 
-    public void addQItem(Restaurant restaurant, Location loc){
-        theQ.add(new QItem(restaurant, loc, System.currentTimeMillis()));
+    public void addQItem(Restaurant restaurant){
+        theQ.add(new QItem(restaurant, System.currentTimeMillis()));
     }
 
     public QItem remove(int index){
@@ -42,6 +42,13 @@ public class RestaurantManager {
     public void printTheQ(){
         for (QItem i : theQ){
             Log.e("Q item",i.toString());
+        }
+    }
+
+    public static void printList(ArrayList<Restaurant> list){
+        Log.e("printList", "printing");
+        for (Restaurant r: list){
+            Log.e("restaurant", r.toString());
         }
     }
 

@@ -32,7 +32,7 @@ public class Review implements Comparable<Review>{
 
     public String toString(){
         //TEST, change later
-        return restaurant.id+" <-- review";
+        return restaurant.location_id+" <-- review";
     }
 
 }

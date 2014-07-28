@@ -6,12 +6,10 @@ import android.text.format.Time;
 public class QItem implements Comparable<QItem>{
 
     public Restaurant restaurant;
-    public Location location;
     public Time timeAddedToQ = new Time();
 
-    public QItem(Restaurant r, Location l, long timeInMillis){
+    public QItem(Restaurant r, long timeInMillis){
         this.restaurant = r;
-        this.location = l;
         timeAddedToQ.set(timeInMillis);
     }
 
@@ -26,8 +24,7 @@ public class QItem implements Comparable<QItem>{
     }
 
     public String toString(){
-        //TEST, change later
-        return restaurant.id+" <-- Qitem";
+        return restaurant.toString()+" time: "+timeAddedToQ;
     }
 
 }
