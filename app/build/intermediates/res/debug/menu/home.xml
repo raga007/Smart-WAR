@@ -4,7 +4,6 @@
     tools:context=".HomeActivity" >
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
-        android:orderInCategory="100"
-        app:showAsAction="never" />
+        android:orderInCategory="100" />
 </menu>
 <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/menu/home.xml -->
