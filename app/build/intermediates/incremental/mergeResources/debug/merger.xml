@@ -40162,10 +40162,17 @@ false
                 qualifiers=""
                 type="layout" />
             <file
-                name="home"
-                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/menu/home.xml"
+                name="main_menu_fragment"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/layout/main_menu_fragment.xml"
                 qualifiers=""
-                type="menu" />
+                type="layout" />
+            <file
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/values/attrs.xml"
+                qualifiers="" >
+                <attr
+                    name="fontPath"
+                    format="string" />
+            </file>
             <file
                 path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/values/dimens.xml"
                 qualifiers="" >

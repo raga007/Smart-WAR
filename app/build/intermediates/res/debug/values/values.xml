@@ -7,6 +7,13 @@
     <attr name="background" format="reference|color" />
     <attr name="backgroundSplit" format="reference|color" />
     <attr name="divider" format="reference" />
+    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/values/attrs.xml -->
+    <eat-comment />
+
+    <attr name="fontPath" format="string" />
+    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.actionbarsherlock/actionbarsherlock/4.4.0/res/values/values.xml -->
+    <eat-comment />
+
     <attr name="height" format="dimension" />
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.github.chrisbanes.actionbarpulltorefresh/library/0.9.9/res/values/values.xml -->
     <eat-comment />
