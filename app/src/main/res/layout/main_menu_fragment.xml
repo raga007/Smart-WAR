@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <info.hoang8f.widget.FButton
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:textSize="20sp"
+        android:textColor="@color/app_text_color"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginRight="-5px"
+        android:layout_marginLeft="-5px"
+        android:layout_marginTop="-5px"
+        android:layout_marginBottom="-5px"
+        android:text="Write a Review"
+        fbutton:buttonColor="@android:color/white"
+        fbutton:shadowEnabled="false"
+        fbutton:cornerRadius="0dp"
+        android:paddingLeft="10dp"
+        android:drawablePadding="10dp"
+        android:gravity="left|center_vertical"
+        android:drawableLeft="@drawable/icon_home_write_reviews"
+        />
+
+</LinearLayout>
