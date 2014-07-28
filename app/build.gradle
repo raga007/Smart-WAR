@@ -19,7 +19,37 @@ android {
     }
 }
 
+
+repositories {
+    maven { url 'https://raw.githubusercontent.com/Goddchen/mvn-repo/master/'}
+    mavenCentral()
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:19.+'
+
+    //Android support jar for all views
+    compile 'com.android.support:support-v4:19.0.0'
+    //Pull to refesh library for the homepage
+    compile ('com.github.chrisbanes.actionbarpulltorefresh:extra-abs:+') {
+        exclude group: 'com.android.support', module:'support-v4'
+    }
+    //Action bar sherlock for the view pager
+    compile ("com.actionbarsherlock:actionbarsherlock:[4.4,)@aar") {
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
+    //Library for automatic button UI response on press
+    compile 'info.hoang8f:fbutton:1.0.5'
+    //Library for supporting animations in previous versions of android
+    compile 'com.nineoldandroids:library:2.4.0+'
+    //Google play library for push notifications
+    compile 'com.google.android.gms:play-services:4.4.+'
+    //Library to enable json communication
+    compile 'com.google.code.gson:gson:2.2.+'
+    //Library for fonts
+    compile 'uk.co.chrisjenx:calligraphy:1.0.+'
+    //Library for easy date/time conversion
+    compile 'net.danlew:android.joda:2.3.4'
+    // Library for autofit text view
+    compile 'me.grantland:autofittextview:0.1.+'
 }
