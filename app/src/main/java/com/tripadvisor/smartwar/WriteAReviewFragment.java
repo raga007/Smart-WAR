@@ -3,15 +3,18 @@ package com.tripadvisor.smartwar;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import android.widget.RatingBar.OnRatingBarChangeListener;
 import com.actionbarsherlock.app.SherlockFragment;
+import android.view.View.OnClickListener;
 import com.tripadvisor.smartwar.constants.BasicListItemIO;
 import com.tripadvisor.smartwar.constants.RatingType;
 import com.tripadvisor.smartwar.constants.VisitType;
@@ -32,6 +35,7 @@ public class WriteAReviewFragment extends SherlockFragment {
     private TextView mTimeVisited;
     private TextView mDateVisited;
     private LinearLayout mDateVisitedLayout;
+    private Button mSubmitButton;
 
     private static final int SELECTED_VISIT_TYPE = 4;
 
@@ -39,7 +43,12 @@ public class WriteAReviewFragment extends SherlockFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         contentView = inflater.inflate(R.layout.write_a_review_fragment, container, false);
         initViews();
-
+        mSubmitButton.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                Fragment fragment = new SearchFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_fragment, fragment).commit();
+            }
+        });
         return contentView;
     }
 
@@ -54,6 +63,7 @@ public class WriteAReviewFragment extends SherlockFragment {
 
 
     private void initDateVisitedView(){
+        mSubmitButton = (Button) contentView.findViewById(R.id.submitButton);
         mTimeVisited = (TextView) contentView.findViewById(R.id.timeVisited);
         mDateVisited = (TextView) contentView.findViewById(R.id.dateVisited);
         mDateVisitedLayout = (LinearLayout) contentView.findViewById(R.id.dateVisitedLayout);

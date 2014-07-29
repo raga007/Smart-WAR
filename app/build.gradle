@@ -27,7 +27,7 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-
+    compile files('libs/location.jar')
     //Android support jar for all views
     compile 'com.android.support:support-v4:19.0.0'
     //Pull to refesh library for the homepage

@@ -40140,6 +40140,11 @@ false
                 qualifiers=""
                 type="drawable" />
             <file
+                name="common_list_selector"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/drawable/common_list_selector.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
                 name="edit_text_no_border_selector"
                 path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/drawable/edit_text_no_border_selector.xml"
                 qualifiers=""
@@ -40147,6 +40152,11 @@ false
             <file
                 name="edit_text_no_border_shape"
                 path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/drawable/edit_text_no_border_shape.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="instant_search_loading_box"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/drawable/instant_search_loading_box.xml"
                 qualifiers=""
                 type="drawable" />
             <file
@@ -40162,6 +40172,11 @@ false
             <file
                 name="review_ratingbar_selector_filled"
                 path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/drawable/review_ratingbar_selector_filled.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="white_common_selector"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/drawable/white_common_selector.xml"
                 qualifiers=""
                 type="drawable" />
             <file
@@ -40185,6 +40200,11 @@ false
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
+                name="review_green_up_arrow"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/drawable-hdpi/review_green_up_arrow.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/drawable-mdpi/ic_launcher.png"
                 qualifiers="mdpi-v4"
@@ -40205,8 +40225,18 @@ false
                 qualifiers=""
                 type="layout" />
             <file
+                name="basic_list_item"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/layout/basic_list_item.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="main_menu_fragment"
                 path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/layout/main_menu_fragment.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="search_fragment"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/layout/search_fragment.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -40270,9 +40300,9 @@ false
                 </color>
                 <color name="default_text" >#000
                 </color>
-                <color name="app_text_color" >#565656
-                </color>
                 <color name="rac_offer_red" >#f37A19
+                </color>
+                <color name="app_text_color" >#565656
                 </color>
                 <color name="infinite_calendar_sunday_font_title" >#FF666666
                 </color>
@@ -40328,9 +40358,9 @@ false
                 </color>
                 <color name="white" >#FFFFFFFF
                 </color>
-                <color name="transparent_black_overlay" >#37000000
-                </color>
                 <color name="disabled_filter" >#AAA
+                </color>
+                <color name="transparent_black_overlay" >#37000000
                 </color>
                 <color name="poi_closed_banner" >#D20028
                 </color>
@@ -40364,6 +40394,14 @@ false
                 </string>
                 <string name="mobile_trip_type_family_8e0" >Family
                 </string>
+                <string name="mobile_poor" >Poor
+                </string>
+                <string name="mobile_trip_type_family_with_young_children_8e0" >Family with young children
+                </string>
+                <string name="mobile_trip_type_couples_8e0" >Couples
+                </string>
+                <string name="mobile_trip_type_friends_8e0" >Friends
+                </string>
                 <string name="mobile_trip_type_family_with_teenagers_8e0" >Family with teenagers
                 </string>
                 <string name="mobile_excellent" >Excellent
@@ -40372,19 +40410,11 @@ false
                 </string>
                 <string name="mobile_very_good" >Very good
                 </string>
-                <string name="mobile_poor" >Poor
-                </string>
                 <string name="mobile_trip_type_solo_8e0" >Solo
-                </string>
-                <string name="mobile_trip_type_family_with_young_children_8e0" >Family with young children
-                </string>
-                <string name="mobile_trip_type_couples_8e0" >Couples
                 </string>
                 <string name="mobile_average" >Average
                 </string>
                 <string name="mobile_trip_type_business_8e0" >Business
-                </string>
-                <string name="mobile_trip_type_friends_8e0" >Friends
                 </string>
             </file>
             <file
@@ -40480,20 +40510,20 @@ bottom
                 </dimen>
             </file>
             <file
-                name="common_list_selector"
-                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/drawable/common_list_selector.xml"
-                qualifiers=""
+                name="icon_magnifying_glass"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/drawable-hdpi/icon_magnifying_glass.png"
+                qualifiers="hdpi-v4"
                 type="drawable" />
             <file
-                name="white_common_selector"
-                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/drawable/white_common_selector.xml"
-                qualifiers=""
+                name="cancel_cross"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/drawable-hdpi/cancel_cross.png"
+                qualifiers="hdpi-v4"
                 type="drawable" />
             <file
-                name="basic_list_item"
-                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/layout/basic_list_item.xml"
-                qualifiers=""
-                type="layout" />
+                name="icon_meta_no_availability"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/drawable-hdpi/icon_meta_no_availability.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
         </source>
         <source path="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/generated/res/rs/debug" />
         <source path="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/generated/res/generated/debug" />

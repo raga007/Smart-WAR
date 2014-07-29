@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    android:orientation="vertical" >
+
+    <EditText android:id="@+id/searchbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:textColor="@color/ta_green"
+        android:hint="Search for Restaurants"
+        android:drawableLeft="@drawable/icon_magnifying_glass"
+        android:drawableRight="@drawable/icon_meta_no_availability"/>
+
+    <!--
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:cacheColorHint="@color/white"
+        android:choiceMode="singleChoice"
+        android:divider="@color/list_divider"
+        android:dividerHeight="0.5dp"
+        android:drawSelectorOnTop="false"
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="true" />
+        -->
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_no_border_selector"
+        android:gravity="left"
+        android:hint="Description"
+        android:inputType="textCapSentences|textMultiLine"
+        android:minLines="4"
+        style="@style/edittext"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

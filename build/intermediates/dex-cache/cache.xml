@@ -8,6 +8,36 @@
         revision="19.1.0"
         sha1="af64527b748983a75de9c0756e9768b56b240a49"/>
     <item
+        dex="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/pre-dexed/debug/location-4567e08f79155b02871e243f5631998bf38ba737.jar"
+        jar="/Users/admin/AndroidStudioProjects/SmartWAR/app/libs/location.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="80752e737f50059445f3b2419f2036db6df491df"/>
+    <item
+        dex="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/pre-dexed/debug/classes-dcf3ad5c4986ca5efa09d667371de7e48b42e44a.jar"
+        jar="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/info.hoang8f/fbutton/1.0.5/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="2c12397a785c3b1868fbebeffc9553457b27803f"/>
+    <item
+        dex="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/pre-dexed/debug/classes-29b7c3abda96f0911a41d65a46377f6787009b35.jar"
+        jar="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.github.chrisbanes.actionbarpulltorefresh/extra-abs/0.9.9/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="384c473f9ae10a515a11d93f9d91e9d686913538"/>
+    <item
+        dex="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/pre-dexed/debug/support-v4-19.0.1-3bf117e59e2e0f41bbf9219f2be90cdcf1dd583d.jar"
+        jar="/Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-v4/19.0.1/support-v4-19.0.1.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="587da9a481ffd341d2fa091704489b89845ddacd"/>
+    <item
+        dex="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/pre-dexed/debug/classes-cd33f7a50f78f908917a5bb45a1e8795df9c3e05.jar"
+        jar="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="ff577b415deb52d3e9d4a6c7bd6908c8f7914d3a"/>
+    <item
         dex="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/pre-dexed/debug/classes-39739e20ed34b30c49660592dabc4318c715c5ca.jar"
         jar="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/me.grantland/autofittextview/0.1.1/classes.jar"
         jumboMode="false"
@@ -32,23 +62,11 @@
         revision="19.1.0"
         sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb"/>
     <item
-        dex="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/pre-dexed/debug/classes-dcf3ad5c4986ca5efa09d667371de7e48b42e44a.jar"
-        jar="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/info.hoang8f/fbutton/1.0.5/classes.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="2c12397a785c3b1868fbebeffc9553457b27803f"/>
-    <item
         dex="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/pre-dexed/debug/calligraphy-1.0.0-9c3e2cc1843b43dcbc113ab000142975f658edc0.jar"
         jar="/Users/admin/.gradle/caches/modules-2/files-2.1/uk.co.chrisjenx/calligraphy/1.0.0/dbc9b5d6f818720e04200d8a9b3c573855d0d0/calligraphy-1.0.0.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="00dbc9b5d6f818720e04200d8a9b3c573855d0d0"/>
-    <item
-        dex="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/pre-dexed/debug/classes-29b7c3abda96f0911a41d65a46377f6787009b35.jar"
-        jar="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.github.chrisbanes.actionbarpulltorefresh/extra-abs/0.9.9/classes.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="384c473f9ae10a515a11d93f9d91e9d686913538"/>
     <item
         dex="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/pre-dexed/debug/classes-698c99af10d8e00a1baa1c54781bcd6b0c00edc4.jar"
         jar="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/0.4.0/classes.jar"
@@ -56,22 +74,10 @@
         revision="19.1.0"
         sha1="6ca319f998430aa20c4dde97ba6df213d6cf3dd0"/>
     <item
-        dex="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/pre-dexed/debug/support-v4-19.0.1-3bf117e59e2e0f41bbf9219f2be90cdcf1dd583d.jar"
-        jar="/Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-v4/19.0.1/support-v4-19.0.1.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="587da9a481ffd341d2fa091704489b89845ddacd"/>
-    <item
         dex="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/pre-dexed/debug/gson-2.2.4-cf148dfa51c723797d626b19f3cb31671903097c.jar"
         jar="/Users/admin/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="a60a5e993c98c864010053cb901b7eab25306568"/>
-    <item
-        dex="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/pre-dexed/debug/classes-cd33f7a50f78f908917a5bb45a1e8795df9c3e05.jar"
-        jar="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.3.4/classes.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="ff577b415deb52d3e9d4a6c7bd6908c8f7914d3a"/>
 
 </pre-dex-items>
