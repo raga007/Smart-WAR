@@ -4,15 +4,10 @@ import android.net.Uri;
 import android.os.AsyncTask;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -37,7 +32,6 @@ public class NearbySearch {
         return results;
     }
 
-
     private static class SearchTask extends AsyncTask<Double, Void, ArrayList<Restaurant>> {
 
         // params should be lat, lng, radius (in this order)
@@ -58,6 +52,7 @@ public class NearbySearch {
                     .appendPath("map")
                     .appendPath(lat.toString() + "," + lng.toString())
                     .appendQueryParameter("distance", dist.toString())
+                    .appendQueryParameter("lunit", "km")
                     .appendQueryParameter("key", API_KEY);
             String https_url = builder.build().toString();
 
@@ -88,11 +83,7 @@ public class NearbySearch {
                     }
                 }
 
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
