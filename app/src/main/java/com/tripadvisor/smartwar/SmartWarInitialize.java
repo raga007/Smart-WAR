@@ -1,6 +1,9 @@
 package com.tripadvisor.smartwar;
 
 import android.app.Application;
+import android.location.Location;
+
+import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibrary;
 
 import net.danlew.android.joda.ResourceZoneInfoProvider;
 
@@ -13,6 +16,8 @@ public class SmartWarInitialize extends Application {
     public void onCreate() {
         super.onCreate();
         CalligraphyConfig.initDefault("fonts/RobotoSlab-Regular.ttf", R.attr.fontPath);
+        LocationLibrary.showDebugOutput(true);
+        LocationLibrary.initialiseLibrary(getBaseContext(), "com.tripadvisor.smartwar");
         //Initialize the Joda Time Library
         ResourceZoneInfoProvider.init(this);
     }

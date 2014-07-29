@@ -52,4 +52,6 @@ dependencies {
     compile 'net.danlew:android.joda:2.3.4'
     // Library for autofit text view
     compile 'me.grantland:autofittextview:0.1.+'
+    //Library for async http
+    compile 'com.loopj.android:android-async-http:1.4.5'
 }

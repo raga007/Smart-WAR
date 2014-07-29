@@ -2,10 +2,12 @@ package com.tripadvisor.smartwar;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
-import android.os.Bundle;
-
+import android.os.Bundle; 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibrary;
+
+import java.util.ArrayList;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -16,8 +18,10 @@ public class HomeActivity extends SherlockFragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
         Fragment fragment = new WriteAReviewFragment();
+        ArrayList<Restaurant> results = NearbySearch.search(40.761808, -73.981798, 0.2);
+        RestaurantManager.printList(results);
+        LocationLibrary.forceLocationUpdate(getBaseContext());
         getSupportFragmentManager().beginTransaction().add(R.id.content_fragment, fragment).commit();
     }
 
