@@ -48,12 +48,11 @@ public class NearbySearch {
 
             StringBuffer jsonResponse = new StringBuffer();
             String inputLine;
-            while ((inputLine = in.readLine()) != null) {
+            while ((inputLine = in.readLine()) != null)
                 jsonResponse.append(inputLine);
-            }
 
-            JSONObject jsonObj = new JSONObject(jsonResponse.toString());
-            JSONArray data = jsonObj.getJSONArray("data");
+            JSONArray data = new JSONObject(jsonResponse.toString())
+                    .getJSONArray("data");
             for (int i = 0; i < data.length(); i++) {
                 JSONObject jObj = data.getJSONObject(i);
                 if (jObj.getJSONObject("category").getString("key").equals("restaurant")) {
