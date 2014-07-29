@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.os.Bundle; 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibrary;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,7 @@ public class HomeActivity extends SherlockFragmentActivity {
 
         ArrayList<Restaurant> results = NearbySearch.search(40.761808, -73.981798, 0.2);
         RestaurantManager.printList(results);
+        LocationLibrary.forceLocationUpdate(getBaseContext());
 
         Fragment fragment = new MainMenuFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.content_fragment, fragment).commit();

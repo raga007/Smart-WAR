@@ -11,6 +11,8 @@ import android.widget.Toast;
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationInfo;
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibraryConstants;
 
+import java.util.ArrayList;
+
 public class LocationChangedReceiver extends BroadcastReceiver {
     public LocationChangedReceiver() {
     }
@@ -22,7 +24,9 @@ public class LocationChangedReceiver extends BroadcastReceiver {
         if (extras != null) {
             receivedLocationInfo = (LocationInfo) intent.getExtras().get(LocationLibraryConstants.LOCATION_BROADCAST_EXTRA_LOCATIONINFO);
         }
-        Toast.makeText(context,"onReceive: "+receivedLocationInfo.toString(),Toast.LENGTH_LONG);
-        NearbySearch.search(receivedLocationInfo.lastLat, receivedLocationInfo.lastLong, NearbySearch.RADIUS);
+        Log.e("test", "onReceive: " + receivedLocationInfo.toString());
+        ArrayList<Restaurant> results = NearbySearch.search(receivedLocationInfo.lastLat, receivedLocationInfo.lastLong, NearbySearch.RADIUS);
+        RestaurantManager.printList(results);
+
     }
 }

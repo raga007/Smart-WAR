@@ -1,6 +1,7 @@
 package com.tripadvisor.smartwar;
 
 import android.app.Application;
+import android.location.Location;
 
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibrary;
 
@@ -14,6 +15,7 @@ public class SmartWarInitialize extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        LocationLibrary.showDebugOutput(true);
         LocationLibrary.initialiseLibrary(getBaseContext(), "com.tripadvisor.smartwar");
         CalligraphyConfig.initDefault("fonts/Roboto-Thin.ttf", R.attr.fontPath);
         //Initialize the Joda Time Library
