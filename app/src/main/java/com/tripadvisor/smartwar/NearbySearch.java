@@ -17,10 +17,11 @@ import javax.net.ssl.HttpsURLConnection;
  * Created by Jens on 7/28/14.
  */
 public class NearbySearch {
-
+    
+    public static final double RADIUS = 0.03;
     private static final String API_KEY = "785cb9e5-067b-478f-9c79-ad59bde7ed25";
 
-    public static ArrayList<Restaurant> search(Double lat, Double lng, Double dist) {
+    public static ArrayList<Restaurant> search(double lat, double lng, double dist) {
         ArrayList<Restaurant> results = null;
         try {
             AsyncTask<Double, Void, ArrayList<Restaurant>> task = new SearchTask();
