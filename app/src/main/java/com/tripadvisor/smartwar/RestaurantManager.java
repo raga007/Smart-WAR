@@ -46,7 +46,6 @@ public class RestaurantManager {
     }
 
     public static void printList(ArrayList<Restaurant> list){
-        Log.e("printList", "printing");
         for (Restaurant r: list){
             Log.e("restaurant", r.toString());
         }

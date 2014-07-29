@@ -19,17 +19,20 @@ public class HomeActivity extends SherlockFragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Log.e("test","1");
-        new Thread() {
-            public void run() {
-                Log.e("test","2");
-                ArrayList<Restaurant> results = NearbySearch.search(40.761808, -73.981798, 0.2);
-                Log.e("test","3");
-                RestaurantManager.printList(results);
-                Log.e("test","4");
-            }
-        }.start();
-        Log.e("test","5");
+
+//        new Thread() {
+//            public void run() {
+//                Log.e("test","2");
+//                ArrayList<Restaurant> results = NearbySearch.search(40.761808, -73.981798, 0.2);
+//                Log.e("test","3");
+//                RestaurantManager.printList(results);
+//                Log.e("test","4");
+//            }
+//        }.start();
+
+        ArrayList<Restaurant> results = NearbySearch.search(40.761808, -73.981798, 0.2);
+        RestaurantManager.printList(results);
+
         Fragment fragment = new MainMenuFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.content_fragment, fragment).commit();
     }
