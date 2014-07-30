@@ -14,6 +14,7 @@ public class SearchFragment extends SherlockFragment {
 
     private View contentView;
     private EditText debugTextView;
+    public static String debugData = new String();
 
 
     @Override
@@ -21,18 +22,24 @@ public class SearchFragment extends SherlockFragment {
         contentView = inflater.inflate(R.layout.search_fragment, container, false);
         debugTextView = (EditText) contentView.findViewById(R.id.description);
 
-        UserLocationHelper.getInstance().addUserLocation(2,3,4);
-        UserLocationHelper.getInstance().addUserLocation(2,3,5);
-        UserLocationHelper.getInstance().addUserLocation(2,3,6);
-        UserLocationHelper.getInstance().addUserLocation(2, 3, 7);
+        /*
+        UserLocationHelper helper = UserLocationHelper.getInstance();
+        helper.addUserLocation(2,3,4);
+        helper.addUserLocation(2,3,5);
+        helper.addUserLocation(2,3,6);
+        helper.addUserLocation(2,3,7);
 
-        StringBuffer debugData = new StringBuffer();
-        debugData.append(UserLocationHelper.getInstance().userLocationData.toString() + "\n");
-        debugData.append("Distance test :" + UserLocationHelper.getInstance().distance(2,3,2,3,'K') + "\n");
-        debugData.append("User range duration : " + UserLocationHelper.getInstance().getUserInRangeDuration());
+        debugData.append(helper.userLocationData.toString() + "\n");
+        debugData.append("Distance test :" + helper.distance(2,3,2,3,'K') + "\n");
+        debugData.append("User range duration : " + helper.getUserInRangeDuration());
+        */
 
         debugTextView.setText(debugData.toString());
         return contentView;
+    }
+
+    public void updateDebugView(){
+        debugTextView.setText(debugData.toString());
     }
 
 

@@ -16,8 +16,8 @@ public class SmartWarInitialize extends Application {
     public void onCreate() {
         super.onCreate();
         CalligraphyConfig.initDefault("fonts/RobotoSlab-Regular.ttf", R.attr.fontPath);
-        LocationLibrary.showDebugOutput(true);
-        LocationLibrary.initialiseLibrary(getBaseContext(), "com.tripadvisor.smartwar");
+        LocationLibrary.showDebugOutput(false);
+        LocationLibrary.initialiseLibrary(getBaseContext(), 30000, 1000, "com.tripadvisor.smartwar");
         //Initialize the Joda Time Library
         ResourceZoneInfoProvider.init(this);
     }
