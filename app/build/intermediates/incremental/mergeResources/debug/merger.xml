@@ -44513,6 +44513,88 @@ false
                 type="anim" />
         </source>
     </dataSet>
+    <dataSet config="1.3" >
+        <source path="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.pixplicity.easyprefs/library/1.3/res" />
+    </dataSet>
+    <dataSet config="unspecified" >
+        <source path="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/SmartWAR.libraries/android-ago/unspecified/res" >
+            <file
+                name="ic_launcher"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/SmartWAR.libraries/android-ago/unspecified/res/drawable-hdpi-v4/ic_launcher.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/SmartWAR.libraries/android-ago/unspecified/res/drawable-mdpi-v4/ic_launcher.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/SmartWAR.libraries/android-ago/unspecified/res/drawable-xhdpi-v4/ic_launcher.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_launcher"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/SmartWAR.libraries/android-ago/unspecified/res/drawable-xxhdpi-v4/ic_launcher.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/SmartWAR.libraries/android-ago/unspecified/res/values/values.xml"
+                qualifiers="" >
+                <string name="just_now" >Just Now
+                </string>
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <string name="app_name" >relative-time-textview
+                </string>
+
+                <declare-styleable name="RelativeTimeTextView" >
+                    <attr
+                        name="reference_time"
+                        format="string" />
+                </declare-styleable>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/SmartWAR.libraries/android-ago/unspecified/res/values-v11/values.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/SmartWAR.libraries/android-ago/unspecified/res/values-v14/values.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+        </source>
+    </dataSet>
     <dataSet config="unspecified" >
         <source path="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/SmartWAR.libraries/expandable_view_library/unspecified/res" >
             <file
@@ -44600,6 +44682,11 @@ false
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
+                name="icon_map"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/drawable-hdpi/icon_map.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
                 name="icon_meta_no_availability"
                 path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/drawable-hdpi/icon_meta_no_availability.png"
                 qualifiers="hdpi-v4"
@@ -44652,6 +44739,16 @@ false
             <file
                 name="main_menu_fragment"
                 path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/layout/main_menu_fragment.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="restaurant_row_main"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/layout/restaurant_row_main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="restaurant_row_nearby"
+                path="/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/layout/restaurant_row_nearby.xml"
                 qualifiers=""
                 type="layout" />
             <file

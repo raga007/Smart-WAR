@@ -2,6 +2,7 @@ package com.tripadvisor.smartwar;
 
 import android.location.*;
 import android.text.format.Time;
+import java.util.Date;
 
 import java.util.Calendar;
 
@@ -31,6 +32,11 @@ public class QItem implements Comparable<QItem>{
 
     public String toString(){
         return restaurant.toString()+" time: "+timeAddedToQ;
+    }
+
+    public static QItem getDummyQItem(){
+        QItem ret = new QItem(Restaurant.getDummyRestaurant(),new Date().getTime());
+        return ret;
     }
 
 }

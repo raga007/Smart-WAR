@@ -4,6 +4,8 @@ import android.app.Application;
 import android.location.Location;
 
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibrary;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.pixplicity.easyprefs.library.Prefs;
 
 import net.danlew.android.joda.ResourceZoneInfoProvider;
@@ -25,6 +27,10 @@ public class SmartWarInitialize extends Application {
 
         //Initialize the Joda Time Library
         ResourceZoneInfoProvider.init(this);
+
+        //Initialize the image loader
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getApplicationContext()).build();
+        ImageLoader.getInstance().init(config);
     }
 
     @Override

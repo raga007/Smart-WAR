@@ -1,20 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <!-- Title Of Song-->
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="fill_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        android:text="Yo!"
-        android:layout_gravity="center"
-        android:textColor="#040404"
-        android:typeface="sans"
-        android:textSize="15dip"
-        android:textStyle="bold"/>
+    <LinearLayout
+        android:id="@+id/restaurantInfo"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/restaurantImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            />
+
+        <LinearLayout
+            android:orientation="vertical" android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/restaurantName"
+                android:layout_width="fill_parent"
+                android:textSize="22sp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/app_text_color"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                />
+
+            <com.github.curioustechizen.ago.RelativeTimeTextView
+                android:id="@+id/timeVisited"
+                android:layout_width="fill_parent"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/ta_green"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                />
+
+
+            <info.hoang8f.widget.FButton
+                android:id="@+id/btn_nearby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textSize="14sp"
+                android:textColor="@color/app_text_color"
+                android:text="Nearby"
+                android:layout_marginRight="15dp"
+                fbutton:buttonColor="@android:color/white"
+                fbutton:shadowEnabled="false"
+                fbutton:cornerRadius="0dp"
+                android:layout_gravity="right|center_vertical"
+                android:paddingRight="5dp"
+                android:gravity="right|center_vertical"
+                android:drawableLeft="@drawable/icon_map"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
