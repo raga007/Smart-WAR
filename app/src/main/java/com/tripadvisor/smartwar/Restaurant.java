@@ -123,7 +123,6 @@ public class Restaurant {
 
     }
 
-
     public static Restaurant getDummyRestaurant(){
         Restaurant rest = new Restaurant(2,"McDonalds",34.43,97.76);
         rest.image = "http://media-cdn.tripadvisor.com/media/photo-l/05/2b/ba/6f/deuxave.jpg";

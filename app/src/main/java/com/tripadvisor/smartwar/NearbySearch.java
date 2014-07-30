@@ -2,6 +2,7 @@ package com.tripadvisor.smartwar;
 
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.tripadvisor.smartwar.constants.Constants;
 
@@ -64,6 +65,7 @@ public class NearbySearch {
                     .appendQueryParameter("lunit", "km")
                     .appendQueryParameter("key", Constants.API_KEY);
             String https_url = builder.build().toString();
+            Log.e("NearbySearch", https_url);
 
             ArrayList<Restaurant> results = new ArrayList<Restaurant>();
 
