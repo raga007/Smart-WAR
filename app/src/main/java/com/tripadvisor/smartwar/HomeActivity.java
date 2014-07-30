@@ -137,5 +137,6 @@ public class HomeActivity extends SherlockFragmentActivity {
             UserLocationHelper.userLocationData = newUserLocationData;
         }
 
+        restaurantManager.printTheQ();
     }
 }

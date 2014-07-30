@@ -18,7 +18,7 @@ public class SmartWarInitialize extends Application {
         super.onCreate();
         CalligraphyConfig.initDefault("fonts/RobotoSlab-Regular.ttf", R.attr.fontPath);
         LocationLibrary.showDebugOutput(false);
-        LocationLibrary.initialiseLibrary(getBaseContext(), 30000, 1000, "com.tripadvisor.smartwar");
+        LocationLibrary.initialiseLibrary(getBaseContext(), 10000, 1000, "com.tripadvisor.smartwar");
 
         // Initialize the Prefs class
         Prefs.initPrefs(this);
