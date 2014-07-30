@@ -47,6 +47,7 @@ public class WriteAReviewFragment extends SherlockFragment {
         contentView = inflater.inflate(R.layout.write_a_review_fragment, container, false);
         initViews();
         Bundle bundle = this.getArguments();
+        final int index = bundle.getInt("index");
         String restaurantName = bundle.getString("restaurantName");
         long visitTime = bundle.getLong("visitTime");
         getSherlockActivity().getSupportActionBar().setTitle(restaurantName);
@@ -57,6 +58,7 @@ public class WriteAReviewFragment extends SherlockFragment {
             public void onClick(View v) {
                 Fragment fragment = new MainMenuFragment();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_fragment, fragment).commit();
+                RestaurantManager.getInstance().getTheQ().remove(index);
             }
         });
         return contentView;

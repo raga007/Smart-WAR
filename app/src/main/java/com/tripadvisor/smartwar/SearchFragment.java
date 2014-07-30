@@ -59,6 +59,7 @@ public class SearchFragment extends SherlockFragment {
                                     int position, long id) {
                 QItem itemInView = dataInView.get(position);
                 Bundle data = new Bundle();
+                data.putInt("index",position);
                 data.putString("restaurantName",itemInView.restaurant.getName());
                 data.putLong("visitTime", itemInView.timeAddedToQ.toMillis(true));
                 Fragment fragment = new WriteAReviewFragment();
@@ -93,7 +94,7 @@ public class SearchFragment extends SherlockFragment {
             return position;
         }
 
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(int pos, View convertView, ViewGroup parent) {
             View vi = convertView;
             LinearLayout innerRow = null;
             TextView restaurantName = null;
@@ -102,7 +103,8 @@ public class SearchFragment extends SherlockFragment {
             Button nearbyButton = null;
             ListView nearbyListView = null;
             ExpandItemAdapter expandAdapter = null;
-            final QItem item = data.get(position);
+            final int parentPos = pos;
+            final QItem item = data.get(pos);
             if(convertView == null) {
                 vi = inflater.inflate(R.layout.restaurant_row_main, null);
                 innerRow = (LinearLayout) vi.findViewById(R.id.restaurantInfo);
@@ -132,6 +134,7 @@ public class SearchFragment extends SherlockFragment {
                                         int position, long id) {
                     QItem itemInView = item.getNearbyQItems().get(position);
                     Bundle data = new Bundle();
+                    data.putInt("index",parentPos);
                     data.putString("restaurantName",itemInView.restaurant.getName());
                     data.putLong("visitTime", itemInView.timeAddedToQ.toMillis(true));
                     Fragment fragment = new WriteAReviewFragment();
