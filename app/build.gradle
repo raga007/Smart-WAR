@@ -38,6 +38,8 @@ dependencies {
     compile ("com.actionbarsherlock:actionbarsherlock:[4.4,)@aar") {
         exclude group: 'com.google.android', module: 'support-v4'
     }
+    // Sherlock navigation drawer for the side menu
+    compile 'com.sherlock:navigationdrawer:1.0-SNAPSHOT@aar'
     //Library for automatic button UI response on press
     compile 'info.hoang8f:fbutton:1.0.5'
     //Library for supporting animations in previous versions of android
