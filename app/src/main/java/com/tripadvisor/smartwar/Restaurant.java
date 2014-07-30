@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.ArrayList;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -20,8 +21,11 @@ public class Restaurant {
 
     public Location location;
     public Integer location_id;
-    String name;
-    String image;
+    private String name;
+    private String image;
+    private String type;
+
+    ArrayList<Restaurant> nearbyRestaurants;
 
     public Restaurant(Integer id, String name, Double lat, Double lng) {
         this.name = name;
@@ -29,6 +33,7 @@ public class Restaurant {
         location = new Location("restaurant");
         location.setLatitude(lat);
         location.setLongitude(lng);
+        this.nearbyRestaurants = new ArrayList<Restaurant>();
     }
 
     public Location getLocation() {
@@ -36,9 +41,14 @@ public class Restaurant {
     }
     public Integer getLocationId() { return this.location_id; }
     public String getImage() { return this.image; }
+    public String getType() { return this.type; }
 
     public String toString(){
         return (name + " location: " + location.toString() + " location_id: " + this.location_id.toString() + " image: " + this.image);
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public void setImage() {
