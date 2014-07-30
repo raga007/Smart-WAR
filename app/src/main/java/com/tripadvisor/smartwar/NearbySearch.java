@@ -101,9 +101,12 @@ public class NearbySearch {
 
             if (results.size() > 0) {
                 Restaurant rest = results.get(0);
-                for (int i = 1; i < results.size() && i <= Constants.NUM_NEARBY_RESTAURANTS; i++) {
-                    rest.addNearbyRestaurant(results.get(i));
+                if (SmartWarSettings.isUseNearbySuggestions()) {
+                    for (int i = 1; i < results.size() && i <= Constants.NUM_NEARBY_RESTAURANTS; i++) {
+                        rest.addNearbyRestaurant(results.get(i));
+                    }
                 }
+
                 if (SmartWarSettings.isUseSmartTime()) {
                     addQItemIfProperDuration(rest, stayedPutThreshold);
                 }
