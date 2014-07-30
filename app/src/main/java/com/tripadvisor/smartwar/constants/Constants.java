@@ -20,7 +20,7 @@ public class Constants {
     public static final String SIT_DOWN = "sit_down";
 
     public static final Integer NUM_NEARBY_RESTAURANTS = 3;
-    public static final double SEARCH_RADIUS = 1;
+    public static final double SEARCH_RADIUS = 0.03;
     public static final String API_KEY = "785cb9e5-067b-478f-9c79-ad59bde7ed25";
 
     public static final long EXPIRATION_TIME = 7*24*60*1000;

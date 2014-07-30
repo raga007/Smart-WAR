@@ -47,8 +47,16 @@ public class Restaurant {
     public String getImageURL() { return this.image; }
     public String getType() { return this.type; }
 
-    public String toString(){
-        return (name + " location: " + location.toString() + " location_id: " + this.location_id.toString() + " image: " + this.image + " type: " + this.type);
+    public String toString() {
+        String rep = (name + " location: " + location.toString() + " location_id: " + this.location_id.toString() + " image: " + this.image + " type: " + this.type);
+        if (this.nearbyRestaurants.size() > 0) {
+            rep += "\n";
+            rep += "nearby restaurants: ";
+            for (int i = 0; i < this.nearbyRestaurants.size(); i++) {
+                rep += this.nearbyRestaurants.get(i).getName() + ";";
+            }
+        }
+        return rep;
     }
 
     public void addNearbyRestaurant(Restaurant r) {
