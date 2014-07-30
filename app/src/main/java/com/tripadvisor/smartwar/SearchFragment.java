@@ -1,45 +1,68 @@
 package com.tripadvisor.smartwar;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragment;
 import com.tripadvisor.smartwar.constants.UserLocationHelper;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class SearchFragment extends SherlockFragment {
 
     private View contentView;
-    private EditText debugTextView;
     public static String debugData = new String();
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         contentView = inflater.inflate(R.layout.search_fragment, container, false);
-        debugTextView = (EditText) contentView.findViewById(R.id.description);
-
-        /*
-        UserLocationHelper helper = UserLocationHelper.getInstance();
-        helper.addUserLocation(2,3,4);
-        helper.addUserLocation(2,3,5);
-        helper.addUserLocation(2,3,6);
-        helper.addUserLocation(2,3,7);
-
-        debugData.append(helper.userLocationData.toString() + "\n");
-        debugData.append("Distance test :" + helper.distance(2,3,2,3,'K') + "\n");
-        debugData.append("User range duration : " + helper.getUserInRangeDuration());
-        */
-
-        debugTextView.setText(debugData.toString());
         return contentView;
     }
 
-    public void updateDebugView(){
-        debugTextView.setText(debugData.toString());
+
+
+
+    public class MainItemAdapter extends BaseAdapter {
+        private Activity activity;
+        private LayoutInflater inflater;
+        private ArrayList<QItem> data;
+
+        public MainItemAdapter(Activity a, ArrayList<QItem> data) {
+            activity = a;
+            inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        }
+
+        public int getCount() {
+            return data.size();
+        }
+
+        public Object getItem(int position) {
+            return position;
+        }
+
+        public long getItemId(int position) {
+            return position;
+        }
+
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View vi=convertView;
+            if(convertView==null) {
+                vi = inflater.inflate(R.layout.restaurant_row_main, null);
+            }
+
+            return vi;
+        }
     }
 
 
