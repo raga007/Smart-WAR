@@ -52,7 +52,7 @@ public class NearbySearch {
             if (count < 3)
                 return null;
 
-            Double lat = params[0], lng = params[1], dist = params[2];
+            final Double lat = params[0], lng = params[1], dist = params[2];
 
             Uri.Builder builder = new Uri.Builder();
             builder.scheme("https")
@@ -94,18 +94,30 @@ public class NearbySearch {
                     }
                 }
 
-            } catch (Exception e)
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
             Collections.sort(results, new Comparator<Restaurant>() {
                 @Override
                 public int compare(Restaurant r, Restaurant r2) {
-                    UserLocationHelper.getInstance().distance(r.getLocation().getLatitude(),
+                    Double dist1 = UserLocationHelper.getInstance().distance(r.getLocation().getLatitude(),
                                                               r.getLocation().getLongitude(),
-                                                              r2.getLocation().getLatitude(),
-                                                              r2.getLocation().getLongitude(),
+                                                              lat,
+                                                              lng,
                                                               'K');
+                    Double dist2 = UserLocationHelper.getInstance().distance(r2.getLocation().getLatitude(),
+                                                              r2.getLocation().getLongitude(),
+                                                              lat,
+                                                              lng,
+                                                              'K');
+                    return dist1.compareTo(dist2);
                 }
             });
+
+            if (results.size() > 0) {
+                RestaurantManager.getInstance().addQItem(results.get(0));
+            }
 
             return results;
         }
