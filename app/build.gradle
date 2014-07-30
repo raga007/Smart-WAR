@@ -30,6 +30,10 @@ dependencies {
     compile files('libs/location.jar')
     //Android support jar for all views
     compile 'com.android.support:support-v4:19.0.0'
+
+    //persistence
+    compile 'com.pixplicity.easyprefs:library:1.3'
+
     //Pull to refesh library for the homepage
     compile ('com.github.chrisbanes.actionbarpulltorefresh:extra-abs:+') {
         exclude group: 'com.android.support', module:'support-v4'
