@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.util.Log;
+
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationInfo;
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibraryConstants;
 import com.tripadvisor.smartwar.constants.UserLocationHelper;
@@ -26,20 +27,19 @@ public class LocationChangedReceiver extends BroadcastReceiver {
         StringBuffer debugInfo = new StringBuffer();
         debugInfo.append("onReceive: " + receivedLocationInfo.toString() + "\n");
 
-
-        UserLocationHelper.getInstance().addUserLocation(receivedLocationInfo);
-        if (UserLocationHelper.getInstance().hasUserStayedPutLongEnough()) {
+        UserLocationHelper userLocationHelper = UserLocationHelper.getInstance();
+        userLocationHelper.addUserLocation(receivedLocationInfo);
+        if (userLocationHelper.hasUserStayedPutLongEnough()) {
             ArrayList<Restaurant> results = NearbySearch.search(receivedLocationInfo.lastLat, receivedLocationInfo.lastLong, NearbySearch.RADIUS);
-            RestaurantManager.printList(results);
-            for(Restaurant r : results){
-                debugInfo.append(r.toString()+ "\n");
+            for (Restaurant r : results) {
+                debugInfo.append(r.toString() + "\n");
             }
         }
-        debugInfo.append( "---------------------------------------"+ "\n");
-        debugInfo.append( "listoflocations:" + UserLocationHelper.getInstance().userLocationData.toString() + "\n");
-        debugInfo.append("timestayedhere:"+UserLocationHelper.getInstance().getUserInRangeDuration()+"" + "\n");
-        debugInfo.append("location:"+ "lat: "+ receivedLocationInfo.lastLat + " lon : " + receivedLocationInfo.lastLong + "\n");
-        debugInfo.append("Longenough?"+ "Not stayed long enough" + "\n");
+        debugInfo.append("---------------------------------------" + "\n");
+        debugInfo.append("listoflocations:" + UserLocationHelper.getInstance().userLocationData.toString() + "\n");
+        debugInfo.append("timestayedhere:" + UserLocationHelper.getInstance().getUserInRangeDuration() + "" + "\n");
+        debugInfo.append("location:" + "lat: " + receivedLocationInfo.lastLat + " lon : " + receivedLocationInfo.lastLong + "\n");
+        debugInfo.append("Longenough?" + "Not stayed long enough" + "\n");
         debugInfo.append("---------------------------------------" + "\n");
         Log.e("debug : ", debugInfo.toString());
     }
