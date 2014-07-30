@@ -1,8 +1,6 @@
 package com.tripadvisor.smartwar.constants;
 
 
-import android.util.FloatMath;
-
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationInfo;
 import com.tripadvisor.smartwar.UserLocation;
 
@@ -13,14 +11,14 @@ import java.util.Comparator;
 public class UserLocationHelper {
 
     public static int LOCATION_CHECK_INTERVAL = 60*1000;
-    public static int USER_RESTAURANT_VISIT_CONFIRMATION_TRESHOLD=30*60*1000;
-    public static int GEOFENCE_TRESHOLD = 20;
+    public static int USER_RESTAURANT_VISIT_CONFIRMATION_THRESHOLD =2*60*1000;
+    public static int GEOFENCE_THRESHOLD = 20;
 
     private static UserLocationHelper locationHelper;
     public static ArrayList<UserLocation> userLocationData;
     private Comparator locationListComparator = new Comparator <UserLocation>() {
         public int compare(UserLocation obj1, UserLocation obj2) {
-            return new Long(obj1.getTimestamp()).compareTo(obj2.getTimestamp());
+            return new Long(obj2.getTimestamp()).compareTo(obj1.getTimestamp());
         }
     };
 
@@ -37,8 +35,8 @@ public class UserLocationHelper {
     }
 
 
-    public void addUserLocation(float lat, float longi, long time){
-        this.userLocationData.add(new UserLocation(lat, longi,time));
+    public void addUserLocation(float lat, float lng, long time){
+        this.userLocationData.add(new UserLocation(lat, lng,time));
     }
 
     public void addUserLocation(LocationInfo info){
@@ -46,7 +44,7 @@ public class UserLocationHelper {
     }
 
     public boolean hasUserStayedPutLongEnough(){
-        return getUserInRangeDuration() > USER_RESTAURANT_VISIT_CONFIRMATION_TRESHOLD;
+        return getUserInRangeDuration() > USER_RESTAURANT_VISIT_CONFIRMATION_THRESHOLD;
     }
 
     /**
@@ -54,19 +52,21 @@ public class UserLocationHelper {
      * how much time the user has stayed at a place.
      */
     public long getUserInRangeDuration(){
+
         Collections.sort(this.userLocationData,locationListComparator);
-        if(this.userLocationData.size() <= 1) return 0;
+
         UserLocation reference = this.userLocationData.get(0);
-        UserLocation check = this.userLocationData.get(1);
-        int index = 1;
-        while(this.userLocationData.size() - 1 > index && isUserInRange(reference.getLatitude(),reference.getLongitude()
-                ,check.getLatitude(),check.getLongitude())){
-            index++;
-            check = this.userLocationData.get(index);
+        UserLocation lastGoodLocation= this.userLocationData.get(0);
+
+        for (UserLocation check: this.userLocationData){
+            if (!isUserInRange(reference.getLatitude(),reference.getLongitude()
+                    ,check.getLatitude(),check.getLongitude())){
+                break;
+            }
+            lastGoodLocation = check;
         }
-        index--;
-        check = this.userLocationData.get(index);
-        return reference.getTimestamp() - check.getTimestamp();
+
+        return reference.getTimestamp() - lastGoodLocation.getTimestamp();
     }
 
     private boolean isUserInRange(float lat_a, float lng_a, float lat_b, float lng_b){
@@ -74,7 +74,7 @@ public class UserLocationHelper {
         double lonOne = lng_a;
         double latTwo = lat_b;
         double lonTwo = lng_b;
-        return distance(latOne,lonOne,latTwo,lonTwo,'k') < GEOFENCE_TRESHOLD;
+        return distance(latOne,lonOne,latTwo,lonTwo,'k') < GEOFENCE_THRESHOLD;
     }
 
     public double distance(double lat1, double lon1, double lat2, double lon2, char unit) {
