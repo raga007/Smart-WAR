@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.tripadvisor.smartwar.constants.Constants;
 import com.tripadvisor.smartwar.constants.UserLocationHelper;
 
 import org.json.JSONArray;
@@ -28,10 +29,10 @@ public class NearbySearch {
     public static final double RADIUS = 0.03;
     public static final String API_KEY = "785cb9e5-067b-478f-9c79-ad59bde7ed25";
 
-    public static ArrayList<Restaurant> search(double lat, double lng, double dist) {
+    public static ArrayList<Restaurant> search(double lat, double lng, double dist, long duration) {
         ArrayList<Restaurant> results = null;
         try {
-            AsyncTask<Double, Void, ArrayList<Restaurant>> task = new SearchTask();
+            AsyncTask<Double, Void, ArrayList<Restaurant>> task = new SearchTask(duration);
             task.execute(lat, lng, dist);
             results = task.get();
         } catch (Exception e) {
@@ -42,6 +43,12 @@ public class NearbySearch {
 
     private static class SearchTask extends AsyncTask<Double, Void, ArrayList<Restaurant>> {
 
+        private long stayedPutThreshold;
+
+        public SearchTask(long stayedPutThreshold){
+            super();
+            this.stayedPutThreshold = stayedPutThreshold;
+        }
         // params should be lat, lng, radius (in this order)
         // any parameter after the third one is ignored
         protected ArrayList<Restaurant> doInBackground(Double... params) {
@@ -99,7 +106,7 @@ public class NearbySearch {
             sortRestaurants(results, lat, lng);
 
             if (results.size() > 0) {
-                RestaurantManager.getInstance().addQItem(results.get(0));
+                addQItemIfProperDuration(results.get(0), stayedPutThreshold);
             }
 
             return results;
@@ -122,6 +129,20 @@ public class NearbySearch {
             });
         }
 
+        private void addQItemIfProperDuration(Restaurant restaurant, long stayedPutThreshold){
+            String type = restaurant.getType();
+            if (stayedPutThreshold == 1) {
+                RestaurantManager.getInstance().addQItem(restaurant);
+            }
+            else if (stayedPutThreshold == 2){
+                if (type == Constants.CAFE || type == Constants.BAKERY || type == Constants.FAST_FOOD){
+                    RestaurantManager.getInstance().addQItem(restaurant);
+                }
+            }
+            else {
+                RestaurantManager.getInstance().addQItem(restaurant);
+            }
+        }
 
 
     }
