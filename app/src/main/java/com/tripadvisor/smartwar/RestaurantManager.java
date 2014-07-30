@@ -3,6 +3,9 @@ package com.tripadvisor.smartwar;
 import android.location.Location;
 import android.util.Log;
 
+import com.pixplicity.easyprefs.library.Prefs;
+import com.tripadvisor.smartwar.constants.Constants;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -12,13 +15,17 @@ public class RestaurantManager {
     private static ArrayList<Review> completedReviews;
     private static RestaurantManager restaurantManager;
 
+    public static final String THE_Q_KEY = "restaurant queue";
+    public static final String COMPLETED_REVIEWS_KEY = "restaurant review list";
+
+
     private RestaurantManager(){
         if (theQ == null) {
             theQ = new ArrayList<QItem>();
         }
     }
 
-    public RestaurantManager getInstance(){
+    public static RestaurantManager getInstance(){
         if (restaurantManager == null){
             restaurantManager = new RestaurantManager();
         }
@@ -66,6 +73,22 @@ public class RestaurantManager {
         for (Review i : completedReviews){
             Log.e("review item",i.toString());
         }
+    }
+
+    public ArrayList<Review> getCompletedReviews(){
+        return completedReviews;
+    }
+
+    public void setCompletedReviews(ArrayList<Review> reviews){
+        this.completedReviews = reviews;
+    }
+
+    public ArrayList<QItem> getTheQ(){
+        return theQ;
+    }
+
+    public void setTheQ(ArrayList<QItem> theQ){
+        this.theQ = theQ;
     }
 
 }
