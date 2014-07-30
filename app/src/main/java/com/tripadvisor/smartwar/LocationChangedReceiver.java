@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationInfo;
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibraryConstants;
+import com.tripadvisor.smartwar.constants.Constants;
 import com.tripadvisor.smartwar.constants.UserLocationHelper;
 
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class LocationChangedReceiver extends BroadcastReceiver {
         userLocationHelper.addUserLocation(receivedLocationInfo);
         long stayedPutThreshold = userLocationHelper.hasUserStayedPutLongEnough();
         if (stayedPutThreshold != 0) {
-            ArrayList<Restaurant> results = NearbySearch.search(receivedLocationInfo.lastLat, receivedLocationInfo.lastLong, NearbySearch.RADIUS, stayedPutThreshold);
+            ArrayList<Restaurant> results = NearbySearch.search(receivedLocationInfo.lastLat, receivedLocationInfo.lastLong, Constants.SEARCH_RADIUS, stayedPutThreshold);
             for (Restaurant r : results) {
                 debugInfo.append(r.toString() + "\n");
             }

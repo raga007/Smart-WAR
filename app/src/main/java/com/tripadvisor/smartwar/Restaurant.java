@@ -4,6 +4,8 @@ import android.location.Location;
 import android.net.Uri;
 import android.util.Log;
 
+import com.tripadvisor.smartwar.constants.Constants;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,7 +20,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class Restaurant {
 
     private static final String[] IMAGE_TYPES = {"medium", "small", "thumbnail", "original", "large"};
-    private final String DEFAULT_IMAGE = "";
+    private final String DEFAULT_IMAGE = "http://www.pivnicesaloon.eu/knife-fork-plate.png";
 
     public Location location;
     public Integer location_id;
@@ -64,7 +66,7 @@ public class Restaurant {
                 .appendPath("location")
                 .appendPath(this.getLocationId().toString())
                 .appendPath("restaurants")
-                .appendQueryParameter("key", NearbySearch.API_KEY);
+                .appendQueryParameter("key", Constants.API_KEY);
         String https_url = builder.build().toString();
 
         try {

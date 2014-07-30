@@ -23,8 +23,6 @@ import javax.net.ssl.HttpsURLConnection;
  */
 public class NearbySearch {
     
-    public static final double RADIUS = 0.03;
-    public static final String API_KEY = "785cb9e5-067b-478f-9c79-ad59bde7ed25";
 
     public static ArrayList<Restaurant> search(double lat, double lng, double dist, long duration) {
         ArrayList<Restaurant> results = null;
@@ -65,7 +63,7 @@ public class NearbySearch {
                     .appendPath(lat.toString() + "," + lng.toString())
                     .appendQueryParameter("distance", dist.toString())
                     .appendQueryParameter("lunit", "km")
-                    .appendQueryParameter("key", API_KEY);
+                    .appendQueryParameter("key", Constants.API_KEY);
             String https_url = builder.build().toString();
 
             ArrayList<Restaurant> results = new ArrayList<Restaurant>();
@@ -103,7 +101,11 @@ public class NearbySearch {
             sortRestaurants(results, lat, lng);
 
             if (results.size() > 0) {
-                addQItemIfProperDuration(results.get(0), stayedPutThreshold);
+                Restaurant rest = results.get(0);
+                for (int i = 1; i < results.size() && i <= Constants.NUM_NEARBY_RESTAURANTS; i++) {
+                    rest.addNearbyRestaurant(results.get(i));
+                }
+                addQItemIfProperDuration(rest, stayedPutThreshold);
             }
 
             return results;
