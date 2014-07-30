@@ -4,7 +4,6 @@ import android.net.Uri;
 import android.os.AsyncTask;
 
 import com.tripadvisor.smartwar.constants.Constants;
-import com.tripadvisor.smartwar.constants.UserLocationHelper;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

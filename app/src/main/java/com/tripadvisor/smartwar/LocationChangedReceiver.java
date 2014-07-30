@@ -10,7 +10,6 @@ import android.util.Log;
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationInfo;
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibraryConstants;
 import com.tripadvisor.smartwar.constants.Constants;
-import com.tripadvisor.smartwar.constants.UserLocationHelper;
 
 import java.util.ArrayList;
 

@@ -11,7 +11,6 @@ import com.google.gson.reflect.TypeToken;
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibrary;
 import com.pixplicity.easyprefs.library.Prefs;
 import com.tripadvisor.smartwar.constants.Constants;
-import com.tripadvisor.smartwar.constants.UserLocationHelper;
 
 import java.util.ArrayList;
 

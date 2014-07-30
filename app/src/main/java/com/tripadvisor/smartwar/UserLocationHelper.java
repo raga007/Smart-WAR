@@ -1,8 +1,8 @@
-package com.tripadvisor.smartwar.constants;
+package com.tripadvisor.smartwar;
 
 
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationInfo;
-import com.tripadvisor.smartwar.UserLocation;
+import com.tripadvisor.smartwar.constants.Constants;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,8 +16,6 @@ public class UserLocationHelper {
     public static int TEST_CONFIRMATION_THRESHOLD =2*60*1000;
     public static int SHORT_CONFIRMATION_THRESHOLD =10*60*1000;
     public static int LONG_CONFIRMATION_THRESHOLD =30*60*1000;
-
-
 
     public static int GEOFENCE_THRESHOLD = 20;
     public static final String USER_LOCATION_DATA_KEY = "user location data";

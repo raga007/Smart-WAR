@@ -7,15 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragment;
-import com.tripadvisor.smartwar.constants.UserLocationHelper;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 
 public class SearchFragment extends SherlockFragment {
@@ -23,15 +18,11 @@ public class SearchFragment extends SherlockFragment {
     private View contentView;
     public static String debugData = new String();
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         contentView = inflater.inflate(R.layout.search_fragment, container, false);
         return contentView;
     }
-
-
-
 
     public class MainItemAdapter extends BaseAdapter {
         private Activity activity;
