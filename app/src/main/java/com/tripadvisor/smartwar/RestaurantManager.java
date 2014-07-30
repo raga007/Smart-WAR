@@ -84,7 +84,17 @@ public class RestaurantManager {
     }
 
     public ArrayList<QItem> getTheQ(){
+        if (SmartWarSettings.isUseExpiration())
+            this.removeExpiredQItems();
         return theQ;
+    }
+
+    private void removeExpiredQItems() {
+        for (int i = theQ.size() - 1; i >= 0; i--) {
+            if (theQ.get(i).age() > Constants.EXPIRATION_TIME) {
+                theQ.remove(i);
+            }
+        }
     }
 
     public void setTheQ(ArrayList<QItem> theQ){

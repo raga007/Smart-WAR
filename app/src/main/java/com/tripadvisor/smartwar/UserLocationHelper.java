@@ -22,12 +22,12 @@ public class UserLocationHelper {
 
     private static UserLocationHelper locationHelper;
     public static ArrayList<UserLocation> userLocationData;
+
     private Comparator locationListComparator = new Comparator <UserLocation>() {
         public int compare(UserLocation obj1, UserLocation obj2) {
             return new Long(obj2.getTimestamp()).compareTo(obj1.getTimestamp());
         }
     };
-
 
     public static UserLocationHelper getInstance(){
         if(locationHelper == null){
