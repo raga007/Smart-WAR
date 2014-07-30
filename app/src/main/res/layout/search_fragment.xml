@@ -9,12 +9,20 @@
     <EditText android:id="@+id/searchbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="5dp"
         android:background="@color/white"
         android:textColor="@color/ta_green"
         android:hint="Search for Restaurants"
         android:drawableLeft="@drawable/icon_magnifying_glass"
         android:drawableRight="@drawable/icon_meta_no_availability"/>
 
+    <View style="@style/line_separator" />
+
+    <View android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/ta_green"> </View>
+
+    <View style="@style/line_separator" />
 
     <ListView
         android:id="@+id/listOfRestaurants"
