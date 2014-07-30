@@ -3,6 +3,8 @@ package com.tripadvisor.smartwar;
 import android.net.Uri;
 import android.os.AsyncTask;
 
+import com.tripadvisor.smartwar.constants.UserLocationHelper;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -10,6 +12,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -32,6 +36,12 @@ public class NearbySearch {
         }
         return results;
     }
+
+    private Comparator locationListComparator = new Comparator <UserLocation>() {
+        public int compare(UserLocation obj1, UserLocation obj2) {
+            return new Long(obj2.getTimestamp()).compareTo(obj1.getTimestamp());
+        }
+    };
 
     private static class SearchTask extends AsyncTask<Double, Void, ArrayList<Restaurant>> {
 
@@ -84,9 +94,18 @@ public class NearbySearch {
                     }
                 }
 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            } catch (Exception e)
+
+            Collections.sort(results, new Comparator<Restaurant>() {
+                @Override
+                public int compare(Restaurant r, Restaurant r2) {
+                    UserLocationHelper.getInstance().distance(r.getLocation().getLatitude(),
+                                                              r.getLocation().getLongitude(),
+                                                              r2.getLocation().getLatitude(),
+                                                              r2.getLocation().getLongitude(),
+                                                              'K');
+                }
+            });
 
             return results;
         }

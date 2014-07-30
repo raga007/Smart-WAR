@@ -16,6 +16,10 @@ public class Restaurant {
         location.setLongitude(lng);
     }
 
+    public Location getLocation() {
+        return location;
+    }
+
     public String toString(){
         return name+" location: "+location.toString();
     }
