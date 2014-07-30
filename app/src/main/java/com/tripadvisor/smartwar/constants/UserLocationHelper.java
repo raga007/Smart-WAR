@@ -2,6 +2,7 @@ package com.tripadvisor.smartwar.constants;
 
 
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationInfo;
+import com.pixplicity.easyprefs.library.Prefs;
 import com.tripadvisor.smartwar.UserLocation;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class UserLocationHelper {
     public static int LOCATION_CHECK_INTERVAL = 60*1000;
     public static int USER_RESTAURANT_VISIT_CONFIRMATION_THRESHOLD =2*60*1000;
     public static int GEOFENCE_THRESHOLD = 20;
+    public static final String USER_LOCATION_DATA_KEY = "user location data";
 
     private static UserLocationHelper locationHelper;
     public static ArrayList<UserLocation> userLocationData;

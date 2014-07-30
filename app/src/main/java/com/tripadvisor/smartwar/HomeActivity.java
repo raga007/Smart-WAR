@@ -6,6 +6,9 @@ import android.os.Bundle;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibrary;
+import com.pixplicity.easyprefs.library.Prefs;
+import com.tripadvisor.smartwar.constants.Constants;
+import com.tripadvisor.smartwar.constants.UserLocationHelper;
 
 import java.util.ArrayList;
 
@@ -19,8 +22,8 @@ public class HomeActivity extends SherlockFragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Fragment fragment = new WriteAReviewFragment();
-        //ArrayList<Restaurant> results = NearbySearch.search(40.761808, -73.981798, 0.2);
-        //RestaurantManager.printList(results);
+        ArrayList<Restaurant> results = NearbySearch.search(40.761808, -73.981798, 0.2);
+        RestaurantManager.printList(results);
         LocationLibrary.forceLocationUpdate(getBaseContext());
         getSupportFragmentManager().beginTransaction().add(R.id.content_fragment, fragment).commit();
     }
@@ -79,4 +82,57 @@ public class HomeActivity extends SherlockFragmentActivity {
         }
     }
 
+    @Override
+    public void onPause(){
+        super.onPause();
+
+        RestaurantManager restaurantManager = RestaurantManager.getInstance();
+
+        //store REVIEWS
+        String newReviewList = Constants.gsonObject.toJson(restaurantManager.getCompletedReviews());
+        Prefs.putString(restaurantManager.COMPLETED_REVIEWS_KEY, newReviewList);
+
+        //store THE QUEUE
+        String newQList = Constants.gsonObject.toJson(restaurantManager.getTheQ());
+        Prefs.putString(restaurantManager.THE_Q_KEY,newQList);
+
+        UserLocationHelper userLocationHelper = UserLocationHelper.getInstance();
+
+        //store USER LOCATION DATA
+        String newUserLocationData = Constants.gsonObject.toJson(userLocationHelper.userLocationData);
+        Prefs.putString(userLocationHelper.USER_LOCATION_DATA_KEY, newUserLocationData);
+
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        RestaurantManager restaurantManager = RestaurantManager.getInstance();
+
+        //retrieve THE QUEUE
+        String toConvert = Prefs.getString(restaurantManager.THE_Q_KEY, null);
+        if (toConvert != null){
+            ArrayList<QItem> theNewQ = Constants.gsonObject.fromJson(toConvert, (new ArrayList<QItem>()).getClass());
+            restaurantManager.setTheQ(theNewQ);
+        }
+        toConvert = null;
+
+        //retrieve REVIEWS
+        toConvert = Prefs.getString(restaurantManager.COMPLETED_REVIEWS_KEY, null);
+        if (toConvert != null){
+            ArrayList<Review> theNewReviewList = Constants.gsonObject.fromJson(toConvert, (new ArrayList<Review>()).getClass());
+            restaurantManager.setCompletedReviews(theNewReviewList);
+        }
+        toConvert = null;
+
+        //retrieve USER LOCATION DATA
+        UserLocationHelper userLocationHelper = UserLocationHelper.getInstance();
+        toConvert = Prefs.getString(UserLocationHelper.USER_LOCATION_DATA_KEY, null);
+        if (toConvert != null) {
+            ArrayList<UserLocation> newUserLocationData = Constants.gsonObject.fromJson(toConvert, (new ArrayList<UserLocation>()).getClass());
+            UserLocationHelper.userLocationData = newUserLocationData;
+        }
+
+    }
 }
