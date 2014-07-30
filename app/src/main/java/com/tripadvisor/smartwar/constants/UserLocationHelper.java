@@ -2,7 +2,6 @@ package com.tripadvisor.smartwar.constants;
 
 
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationInfo;
-import com.pixplicity.easyprefs.library.Prefs;
 import com.tripadvisor.smartwar.UserLocation;
 
 import java.util.ArrayList;
@@ -12,7 +11,14 @@ import java.util.Comparator;
 public class UserLocationHelper {
 
     public static int LOCATION_CHECK_INTERVAL = 60*1000;
-    public static int USER_RESTAURANT_VISIT_CONFIRMATION_THRESHOLD =2*60*1000;
+
+    //Custom visit thresholds
+    public static int TEST_CONFIRMATION_THRESHOLD =2*60*1000;
+    public static int SHORT_CONFIRMATION_THRESHOLD =10*60*1000;
+    public static int LONG_CONFIRMATION_THRESHOLD =30*60*1000;
+
+
+
     public static int GEOFENCE_THRESHOLD = 20;
     public static final String USER_LOCATION_DATA_KEY = "user location data";
 
@@ -45,8 +51,30 @@ public class UserLocationHelper {
         this.userLocationData.add(new UserLocation(info.lastLat,info.lastLong,info.lastLocationUpdateTimestamp));
     }
 
-    public boolean hasUserStayedPutLongEnough(){
-        return getUserInRangeDuration() > USER_RESTAURANT_VISIT_CONFIRMATION_THRESHOLD;
+    //returns 0, 1, 2, or 3
+    //0 = NO
+    //1 = Yes for test
+    //2 = Yes for fast food
+    //3 = Yes for all
+    public int hasUserStayedPutLongEnough(){
+        long duration = getUserInRangeDuration();
+
+        if (Constants.IS_TEST){
+            if (duration > TEST_CONFIRMATION_THRESHOLD) {
+                return 1;
+            }
+            return 0;
+        }
+
+        if (duration > LONG_CONFIRMATION_THRESHOLD){
+            return 3;
+        }
+        else if (duration > SHORT_CONFIRMATION_THRESHOLD){
+            return 2;
+        }
+        else {
+            return 0;
+        }
     }
 
     /**
