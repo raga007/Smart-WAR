@@ -39,7 +39,7 @@ public class LocationChangedReceiver extends BroadcastReceiver {
         debugInfo.append("listoflocations:" + UserLocationHelper.getInstance().userLocationData.toString() + "\n");
         debugInfo.append("timestayedhere:" + UserLocationHelper.getInstance().getUserInRangeDuration() + "" + "\n");
         debugInfo.append("location:" + "lat: " + receivedLocationInfo.lastLat + " lon : " + receivedLocationInfo.lastLong + "\n");
-        debugInfo.append("Longenough?" + "Not stayed long enough" + "\n");
+        debugInfo.append("longenough?" + " Not stayed long enough" + "\n");
         debugInfo.append("---------------------------------------" + "\n");
         Log.e("debug : ", debugInfo.toString());
     }

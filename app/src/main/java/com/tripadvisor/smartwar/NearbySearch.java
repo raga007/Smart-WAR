@@ -2,17 +2,14 @@ package com.tripadvisor.smartwar;
 
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.tripadvisor.smartwar.constants.UserLocationHelper;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -87,7 +84,7 @@ public class NearbySearch {
                                 jObj.getString("name"),
                                 Double.parseDouble(jObj.getString("latitude")),
                                 Double.parseDouble(jObj.getString("longitude")));
-                        r.setImage();
+                        r.setRestaurantInfo();
                         results.add(r);
                     }
                 }
