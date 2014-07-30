@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SmartWAR.iml" filepath="$PROJECT_DIR$/SmartWAR.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/expandable_view_library/expandable_view_library.iml" filepath="$PROJECT_DIR$/libraries/expandable_view_library/expandable_view_library.iml" />
       <module fileurl="file://$PROJECT_DIR$/smart-war.iml" filepath="$PROJECT_DIR$/smart-war.iml" />
     </modules>
   </component>

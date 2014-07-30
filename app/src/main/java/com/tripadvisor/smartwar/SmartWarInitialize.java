@@ -4,6 +4,7 @@ import android.app.Application;
 import android.location.Location;
 
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibrary;
+import com.pixplicity.easyprefs.library.Prefs;
 
 import net.danlew.android.joda.ResourceZoneInfoProvider;
 
@@ -18,6 +19,10 @@ public class SmartWarInitialize extends Application {
         CalligraphyConfig.initDefault("fonts/RobotoSlab-Regular.ttf", R.attr.fontPath);
         LocationLibrary.showDebugOutput(false);
         LocationLibrary.initialiseLibrary(getBaseContext(), 30000, 1000, "com.tripadvisor.smartwar");
+
+        // Initialize the Prefs class
+        Prefs.initPrefs(this);
+
         //Initialize the Joda Time Library
         ResourceZoneInfoProvider.init(this);
     }
@@ -26,4 +31,5 @@ public class SmartWarInitialize extends Application {
     public void onTerminate() {
         super.onTerminate();
     }
+
 }
