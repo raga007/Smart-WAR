@@ -1,1 +1,3 @@
 include ':app'
+include ':libraries:expandable_view_library', ':app'
+project(':libraries:expandable_view_library').projectDir = new File('libraries/expandable_view_library')
