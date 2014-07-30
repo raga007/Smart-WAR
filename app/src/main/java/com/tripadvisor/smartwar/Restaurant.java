@@ -136,4 +136,5 @@ public class Restaurant {
         rest.image = "http://media-cdn.tripadvisor.com/media/photo-l/05/2b/ba/6f/deuxave.jpg";
         return rest;
     }
+
 }

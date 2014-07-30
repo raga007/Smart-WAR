@@ -19,6 +19,7 @@
     <ListView
         android:id="@+id/listOfRestaurants"
         android:layout_width="match_parent"
+        android:descendantFocusability="blocksDescendants"
         android:layout_height="fill_parent"
         android:background="#00000000"
         android:cacheColorHint="@color/white"
