@@ -66,6 +66,7 @@
     <orderEntry type="library" exported="" name="android.joda-2.3.4" level="project" />
     <orderEntry type="library" exported="" name="gson-2.2.4" level="project" />
     <orderEntry type="library" exported="" name="location" level="project" />
+    <orderEntry type="library" exported="" name="navigationdrawer-1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" exported="" name="support-v4-19.0.1" level="project" />
     <orderEntry type="library" exported="" name="actionbarsherlock-4.4.0" level="project" />
     <orderEntry type="library" exported="" name="android-async-http-1.4.5" level="project" />
