@@ -10,9 +10,19 @@ public class RestaurantManager {
 
     private static ArrayList<QItem> theQ;
     private static ArrayList<Review> completedReviews;
+    private static RestaurantManager restaurantManager;
 
-    public RestaurantManager(){
-        theQ = new ArrayList<QItem>();
+    private RestaurantManager(){
+        if (theQ == null) {
+            theQ = new ArrayList<QItem>();
+        }
+    }
+
+    public RestaurantManager getInstance(){
+        if (restaurantManager == null){
+            restaurantManager = new RestaurantManager();
+        }
+        return restaurantManager;
     }
 
     public void addQItem(Restaurant restaurant){
