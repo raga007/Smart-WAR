@@ -4,6 +4,8 @@ import android.location.Location;
 import android.net.Uri;
 import android.util.Log;
 
+import com.tripadvisor.smartwar.constants.Constants;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,6 +20,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class Restaurant {
 
     private static final String[] IMAGE_TYPES = {"medium", "small", "thumbnail", "original", "large"};
+    private final String DEFAULT_IMAGE = "http://www.pivnicesaloon.eu/knife-fork-plate.png";
 
     public Location location;
     public Integer location_id;
@@ -34,21 +37,22 @@ public class Restaurant {
         location.setLatitude(lat);
         location.setLongitude(lng);
         this.nearbyRestaurants = new ArrayList<Restaurant>();
+        this.image = DEFAULT_IMAGE;
     }
 
     public Location getLocation() {
         return this.location;
     }
     public Integer getLocationId() { return this.location_id; }
-    public String getImage() { return this.image; }
+    public String getImageURL() { return this.image; }
     public String getType() { return this.type; }
 
     public String toString(){
-        return (name + " location: " + location.toString() + " location_id: " + this.location_id.toString() + " image: " + this.image);
+        return (name + " location: " + location.toString() + " location_id: " + this.location_id.toString() + " image: " + this.image + " type: " + this.type);
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void addNearbyRestaurant(Restaurant r) {
+        this.nearbyRestaurants.add(r);
     }
 
     public String getName() {
@@ -60,7 +64,8 @@ public class Restaurant {
     }
 
 
-    public void setImage() {
+    // sets restaurant image and type
+    public void setRestaurantInfo() {
         Uri.Builder builder = new Uri.Builder();
         builder.scheme("https")
                 .authority("api.tripadvisor.com")
@@ -70,7 +75,7 @@ public class Restaurant {
                 .appendPath("location")
                 .appendPath(this.getLocationId().toString())
                 .appendPath("restaurants")
-                .appendQueryParameter("key", NearbySearch.API_KEY);
+                .appendQueryParameter("key", Constants.API_KEY);
         String https_url = builder.build().toString();
 
         try {
@@ -90,9 +95,12 @@ public class Restaurant {
                     .getJSONArray("data");
 
             if (data.length() == 0) {
-                Log.e("Restaurant:setImage", "Failed to find restaurant " + this.toString());
+                Log.e("Restaurant:setRestaurantInfo", "Failed to find restaurant " + this.toString());
             } else {
                 JSONObject restaurantObj = data.getJSONObject(0);
+                String type = restaurantObj.getJSONObject("subcategory").getString("key");
+                this.type = type;
+
                 JSONObject images = restaurantObj.getJSONObject("photo").getJSONObject("images");
                 String image = null;
                 for (int i = 0; i < IMAGE_TYPES.length; i++) {
@@ -103,14 +111,16 @@ public class Restaurant {
                     }
                 }
                 if (image == null) {
-                    Log.e("Restaurant:setImage", "Failed to find image for restaurant " + this.toString());
+                    Log.e("Restaurant:setRestaurantInfo", "Failed to find image for restaurant " + this.toString());
                 } else {
                     this.image = image;
                 }
+
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
 

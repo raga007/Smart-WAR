@@ -17,10 +17,9 @@ import android.widget.TextView;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.github.curioustechizen.ago.RelativeTimeTextView;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.tripadvisor.smartwar.constants.UserLocationHelper;
+import com.actionbarsherlock.app.SherlockFragment;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 
 public class SearchFragment extends SherlockFragment {
@@ -28,7 +27,6 @@ public class SearchFragment extends SherlockFragment {
     private View contentView;
     private ListView listOfRestaurants;
     private MainItemAdapter mainAdapter;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -43,9 +41,6 @@ public class SearchFragment extends SherlockFragment {
 
         return contentView;
     }
-
-
-
 
     public class MainItemAdapter extends BaseAdapter {
         private Activity activity;
@@ -87,7 +82,7 @@ public class SearchFragment extends SherlockFragment {
                 nearbyButton = (Button) innerRow.findViewById(R.id.btn_nearby);
                 restaurantName.setText(item.restaurant.getName());
                 timeVisited.setReferenceTime(item.timeAddedToQ.toMillis(true));
-                ImageLoader.getInstance().displayImage(item.restaurant.getImage(),restaurantImage);
+                ImageLoader.getInstance().displayImage(item.restaurant.getImageURL(),restaurantImage);
             }
             return vi;
         }

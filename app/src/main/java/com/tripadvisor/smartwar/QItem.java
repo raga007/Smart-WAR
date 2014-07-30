@@ -4,6 +4,8 @@ import android.location.*;
 import android.text.format.Time;
 import java.util.Date;
 
+import java.util.Calendar;
+
 public class QItem implements Comparable<QItem>{
 
     public Restaurant restaurant;
@@ -12,6 +14,10 @@ public class QItem implements Comparable<QItem>{
     public QItem(Restaurant r, long timeInMillis){
         this.restaurant = r;
         timeAddedToQ.set(timeInMillis);
+    }
+
+    public long age() {
+       return (Calendar.getInstance().getTimeInMillis() - timeAddedToQ.toMillis(false));
     }
 
     @Override

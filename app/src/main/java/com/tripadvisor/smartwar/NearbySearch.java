@@ -2,17 +2,14 @@ package com.tripadvisor.smartwar;
 
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.util.Log;
 
-import com.tripadvisor.smartwar.constants.UserLocationHelper;
+import com.tripadvisor.smartwar.constants.Constants;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,13 +22,11 @@ import javax.net.ssl.HttpsURLConnection;
  */
 public class NearbySearch {
     
-    public static final double RADIUS = 0.03;
-    public static final String API_KEY = "785cb9e5-067b-478f-9c79-ad59bde7ed25";
 
-    public static ArrayList<Restaurant> search(double lat, double lng, double dist) {
+    public static ArrayList<Restaurant> search(double lat, double lng, double dist, long duration) {
         ArrayList<Restaurant> results = null;
         try {
-            AsyncTask<Double, Void, ArrayList<Restaurant>> task = new SearchTask();
+            AsyncTask<Double, Void, ArrayList<Restaurant>> task = new SearchTask(duration);
             task.execute(lat, lng, dist);
             results = task.get();
         } catch (Exception e) {
@@ -42,6 +37,12 @@ public class NearbySearch {
 
     private static class SearchTask extends AsyncTask<Double, Void, ArrayList<Restaurant>> {
 
+        private long stayedPutThreshold;
+
+        public SearchTask(long stayedPutThreshold){
+            super();
+            this.stayedPutThreshold = stayedPutThreshold;
+        }
         // params should be lat, lng, radius (in this order)
         // any parameter after the third one is ignored
         protected ArrayList<Restaurant> doInBackground(Double... params) {
@@ -61,7 +62,7 @@ public class NearbySearch {
                     .appendPath(lat.toString() + "," + lng.toString())
                     .appendQueryParameter("distance", dist.toString())
                     .appendQueryParameter("lunit", "km")
-                    .appendQueryParameter("key", API_KEY);
+                    .appendQueryParameter("key", Constants.API_KEY);
             String https_url = builder.build().toString();
 
             ArrayList<Restaurant> results = new ArrayList<Restaurant>();
@@ -87,7 +88,7 @@ public class NearbySearch {
                                 jObj.getString("name"),
                                 Double.parseDouble(jObj.getString("latitude")),
                                 Double.parseDouble(jObj.getString("longitude")));
-                        r.setImage();
+                        r.setRestaurantInfo();
                         results.add(r);
                     }
                 }
@@ -99,7 +100,19 @@ public class NearbySearch {
             sortRestaurants(results, lat, lng);
 
             if (results.size() > 0) {
-                RestaurantManager.getInstance().addQItem(results.get(0));
+                Restaurant rest = results.get(0);
+                if (SmartWarSettings.isUseNearbySuggestions()) {
+                    for (int i = 1; i < results.size() && i <= Constants.NUM_NEARBY_RESTAURANTS; i++) {
+                        rest.addNearbyRestaurant(results.get(i));
+                    }
+                }
+
+                if (SmartWarSettings.isUseSmartTime()) {
+                    addQItemIfProperDuration(rest, stayedPutThreshold);
+                }
+                else {
+                    RestaurantManager.getInstance().addQItem(rest);
+                }
             }
 
             return results;
@@ -122,6 +135,20 @@ public class NearbySearch {
             });
         }
 
+        private void addQItemIfProperDuration(Restaurant restaurant, long stayedPutThreshold){
+            String type = restaurant.getType();
+            if (stayedPutThreshold == 1) {
+                RestaurantManager.getInstance().addQItem(restaurant);
+            }
+            else if (stayedPutThreshold == 2){
+                if (type == Constants.CAFE || type == Constants.BAKERY || type == Constants.FAST_FOOD){
+                    RestaurantManager.getInstance().addQItem(restaurant);
+                }
+            }
+            else {
+                RestaurantManager.getInstance().addQItem(restaurant);
+            }
+        }
 
 
     }

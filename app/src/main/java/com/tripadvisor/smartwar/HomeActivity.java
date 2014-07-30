@@ -2,13 +2,15 @@ package com.tripadvisor.smartwar;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
-import android.os.Bundle; 
+import android.os.Bundle;
+import android.util.Log;
+
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.google.gson.reflect.TypeToken;
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibrary;
 import com.pixplicity.easyprefs.library.Prefs;
 import com.tripadvisor.smartwar.constants.Constants;
-import com.tripadvisor.smartwar.constants.UserLocationHelper;
 
 import java.util.ArrayList;
 
@@ -22,8 +24,8 @@ public class HomeActivity extends SherlockFragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Fragment fragment = new SearchFragment();
-        ArrayList<Restaurant> results = NearbySearch.search(40.761808, -73.981798, 0.2);
-        RestaurantManager.printList(results);
+//        ArrayList<Restaurant> results = NearbySearch.search(40.761808, -73.981798, 0.2);
+//        RestaurantManager.printList(results);
         LocationLibrary.forceLocationUpdate(getBaseContext());
         getSupportFragmentManager().beginTransaction().add(R.id.content_fragment, fragment).commit();
     }
@@ -113,7 +115,7 @@ public class HomeActivity extends SherlockFragmentActivity {
         //retrieve THE QUEUE
         String toConvert = Prefs.getString(restaurantManager.THE_Q_KEY, null);
         if (toConvert != null){
-            ArrayList<QItem> theNewQ = Constants.gsonObject.fromJson(toConvert, (new ArrayList<QItem>()).getClass());
+            ArrayList<QItem> theNewQ = Constants.gsonObject.fromJson(toConvert, new TypeToken<ArrayList<QItem>>(){}.getType());
             restaurantManager.setTheQ(theNewQ);
         }
         toConvert = null;
@@ -121,7 +123,7 @@ public class HomeActivity extends SherlockFragmentActivity {
         //retrieve REVIEWS
         toConvert = Prefs.getString(restaurantManager.COMPLETED_REVIEWS_KEY, null);
         if (toConvert != null){
-            ArrayList<Review> theNewReviewList = Constants.gsonObject.fromJson(toConvert, (new ArrayList<Review>()).getClass());
+            ArrayList<Review> theNewReviewList = Constants.gsonObject.fromJson(toConvert, new TypeToken<ArrayList<Review>>(){}.getType());
             restaurantManager.setCompletedReviews(theNewReviewList);
         }
         toConvert = null;
@@ -130,7 +132,8 @@ public class HomeActivity extends SherlockFragmentActivity {
         UserLocationHelper userLocationHelper = UserLocationHelper.getInstance();
         toConvert = Prefs.getString(UserLocationHelper.USER_LOCATION_DATA_KEY, null);
         if (toConvert != null) {
-            ArrayList<UserLocation> newUserLocationData = Constants.gsonObject.fromJson(toConvert, (new ArrayList<UserLocation>()).getClass());
+            ArrayList<UserLocation> newUserLocationData = Constants.gsonObject.fromJson(toConvert, new TypeToken<ArrayList<UserLocation>>(){}.getType());
+            Log.e("JSon", newUserLocationData.toString());
             UserLocationHelper.userLocationData = newUserLocationData;
         }
 
