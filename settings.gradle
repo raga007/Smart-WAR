@@ -1,3 +1,5 @@
 include ':app'
 include ':libraries:expandable_view_library', ':app'
+include ':libraries:android-ago', ':app'
 project(':libraries:expandable_view_library').projectDir = new File('libraries/expandable_view_library')
+project(':libraries:android-ago').projectDir = new File('libraries/android-ago')

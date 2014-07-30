@@ -32,6 +32,11 @@ dependencies {
         exclude group: 'com.android.support', module:'support-v4'
         exclude group: 'com.android.support', module:'appcompat-v7'
     }
+    //Library for time ago
+    compile (project(':libraries:android-ago')){
+        exclude group: 'com.android.support', module:'support-v4'
+        exclude group: 'com.android.support', module:'appcompat-v7'
+    }
     compile files('libs/location.jar')
     //Android support jar for all views
     compile 'com.android.support:support-v4:19.0.0'
@@ -65,4 +70,6 @@ dependencies {
     compile 'me.grantland:autofittextview:0.1.+'
     //Library for async http
     compile 'com.loopj.android:android-async-http:1.4.5'
+    //Library to load images asynchronously
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.2'
 }

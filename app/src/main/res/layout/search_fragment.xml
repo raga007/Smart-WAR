@@ -3,7 +3,7 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_gray"
+    android:background="@color/white"
     android:orientation="vertical" >
 
     <EditText android:id="@+id/searchbox"
@@ -15,10 +15,11 @@
         android:drawableLeft="@drawable/icon_magnifying_glass"
         android:drawableRight="@drawable/icon_meta_no_availability"/>
 
+
     <ListView
-        android:id="@+id/list"
+        android:id="@+id/listOfRestaurants"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:background="#00000000"
         android:cacheColorHint="@color/white"
         android:choiceMode="singleChoice"
@@ -27,6 +28,7 @@
         android:drawSelectorOnTop="false"
         android:footerDividersEnabled="true"
         android:headerDividersEnabled="true" />
+
 
 
 </LinearLayout>

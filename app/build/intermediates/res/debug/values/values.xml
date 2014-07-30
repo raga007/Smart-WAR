@@ -296,6 +296,12 @@
         <!-- The class to use as a View's View Delegate. Can be relative path from app's package name -->
         <attr name="ptrViewDelegateClass" format="reference|string" />
     </declare-styleable>
+    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/SmartWAR.libraries/android-ago/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <declare-styleable name="RelativeTimeTextView">
+        <attr name="reference_time" format="string" />
+    </declare-styleable>
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.actionbarsherlock/actionbarsherlock/4.4.0/res/values/values.xml -->
     <eat-comment />
 
@@ -1046,6 +1052,10 @@
     <eat-comment />
 
     <string name="date_time">%1$s, %2$s</string>
+    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/SmartWAR.libraries/android-ago/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <string name="just_now">Just Now</string>
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/src/main/res/values/strings.xml -->
     <eat-comment />
 
@@ -1084,6 +1094,20 @@
     <eat-comment />
 
     <string name="wallet_buy_button_place_holder" translation_description="Text on a button that allows a user to make a payment with Google Wallet [CHAR LIMIT=30]">Buy with Google</string>
+    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/SmartWAR.libraries/android-ago/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.actionbarsherlock/actionbarsherlock/4.4.0/res/values/values.xml -->
     <eat-comment />
 

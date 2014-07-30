@@ -51,6 +51,15 @@ public class Restaurant {
         this.type = type;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
     public void setImage() {
         Uri.Builder builder = new Uri.Builder();
         builder.scheme("https")
@@ -104,4 +113,10 @@ public class Restaurant {
         }
     }
 
+
+    public static Restaurant getDummyRestaurant(){
+        Restaurant rest = new Restaurant(2,"McDonalds",34.43,97.76);
+        rest.image = "http://media-cdn.tripadvisor.com/media/photo-l/05/2b/ba/6f/deuxave.jpg";
+        return rest;
+    }
 }
