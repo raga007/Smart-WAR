@@ -18,7 +18,7 @@ public class RestaurantManager {
         }
     }
 
-    public RestaurantManager getInstance(){
+    public static RestaurantManager getInstance(){
         if (restaurantManager == null){
             restaurantManager = new RestaurantManager();
         }
