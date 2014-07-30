@@ -36,7 +36,7 @@
         jar="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/SmartWAR.libraries/expandable_view_library/unspecified/classes.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="b629ff98ef755bc8a57b65d5d0cc2f40392bc5bd"/>
+        sha1="e25c40eed48610b6a4a8b67bd00f468db792ffd2"/>
     <item
         dex="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/pre-dexed/debug/support-v4-19.0.1-3bf117e59e2e0f41bbf9219f2be90cdcf1dd583d.jar"
         jar="/Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-v4/19.0.1/support-v4-19.0.1.jar"
@@ -102,7 +102,7 @@
         jar="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/SmartWAR.libraries/android-ago/unspecified/classes.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="54cde8db742c983c58d8a1fe1d6463138c3cd54d"/>
+        sha1="d2ead76f902a78b31f1ae57a6b39a3ed612972c4"/>
     <item
         dex="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/pre-dexed/debug/classes-698c99af10d8e00a1baa1c54781bcd6b0c00edc4.jar"
         jar="/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/0.4.0/classes.jar"

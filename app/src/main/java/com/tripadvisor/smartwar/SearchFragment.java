@@ -39,13 +39,15 @@ public class SearchFragment extends SherlockFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         contentView = inflater.inflate(R.layout.search_fragment, container, false);
+        /*
         ArrayList<QItem> items = new ArrayList<QItem>();
         for(int i=0;i<10;i++){
             items.add(QItem.getDummyQItem());
         }
-        dataInView = items;
+        */
+        dataInView = RestaurantManager.getInstance().getTheQ();
         listOfRestaurants = (ListView) contentView.findViewById(R.id.listOfRestaurants);
-        mainAdapter = new MainItemAdapter(getActivity(),items);
+        mainAdapter = new MainItemAdapter(getActivity(),dataInView);
         listOfRestaurants.setAdapter(new SlideExpandableListAdapter(
                 mainAdapter,
                 R.id.btn_nearby,
@@ -118,6 +120,9 @@ public class SearchFragment extends SherlockFragment {
                 nearbyListView = (ListView) convertView.findViewById(R.id.listOfNearbyRestaurants);
             }
 
+            if(item.getNearbyQItems().size() == 0){
+                nearbyButton.setVisibility(View.GONE);
+            }
             nearbyListView.getLayoutParams().height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                     item.getNearbyQItems().size()*NEARBY_RESTAURANT_IMAGE_DIMENSION, getResources().getDisplayMetrics());
             expandAdapter = new ExpandItemAdapter(getActivity(),item.getNearbyQItems());
