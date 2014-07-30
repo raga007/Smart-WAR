@@ -890,6 +890,11 @@
     <item name="abs__progress_circular" type="id"/>
     <item name="abs__progress_horizontal" type="id"/>
     <item name="abs__up" type="id"/>
+    <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/SmartWAR.libraries/expandable_view_library/unspecified/res/values/values.xml -->
+    <eat-comment />
+
+    <item name="expandable" type="id"/>
+    <item name="expandable_toggle_button" type="id"/>
     <!-- From: file:/Users/admin/AndroidStudioProjects/SmartWAR/app/build/intermediates/exploded-aar/com.github.chrisbanes.actionbarpulltorefresh/library/0.9.9/res/values/values.xml -->
     <eat-comment />
 

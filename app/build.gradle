@@ -27,6 +27,11 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    //Library for expandable view
+    compile (project(':libraries:expandable_view_library')){
+        exclude group: 'com.android.support', module:'support-v4'
+        exclude group: 'com.android.support', module:'appcompat-v7'
+    }
     compile files('libs/location.jar')
     //Android support jar for all views
     compile 'com.android.support:support-v4:19.0.0'
