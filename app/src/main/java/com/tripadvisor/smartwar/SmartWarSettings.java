@@ -1,7 +1,9 @@
+package com.tripadvisor.smartwar;
+
 /**
  * Created by jsklar on 7/30/14.
  */
-public class Settings {
+public class SmartWarSettings {
 
     private static boolean useSmartTime = true;
     private static boolean useNearbySuggestions = true;
@@ -12,7 +14,7 @@ public class Settings {
     }
 
     public static void setUseSmartTime(boolean useSmartTime) {
-        Settings.useSmartTime = useSmartTime;
+        SmartWarSettings.useSmartTime = useSmartTime;
     }
 
     public static boolean isUseNearbySuggestions() {
@@ -20,7 +22,7 @@ public class Settings {
     }
 
     public static void setUseNearbySuggestions(boolean useNearbySuggestions) {
-        Settings.useNearbySuggestions = useNearbySuggestions;
+        SmartWarSettings.useNearbySuggestions = useNearbySuggestions;
     }
 
     public static boolean isUseExpiration() {
@@ -28,7 +30,7 @@ public class Settings {
     }
 
     public static void setUseExpiration(boolean useExpiration) {
-        Settings.useExpiration = useExpiration;
+        SmartWarSettings.useExpiration = useExpiration;
     }
 
 

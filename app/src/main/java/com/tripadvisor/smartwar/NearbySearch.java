@@ -104,7 +104,12 @@ public class NearbySearch {
                 for (int i = 1; i < results.size() && i <= Constants.NUM_NEARBY_RESTAURANTS; i++) {
                     rest.addNearbyRestaurant(results.get(i));
                 }
-                addQItemIfProperDuration(rest, stayedPutThreshold);
+                if (SmartWarSettings.isUseSmartTime()) {
+                    addQItemIfProperDuration(rest, stayedPutThreshold);
+                }
+                else {
+                    RestaurantManager.getInstance().addQItem(rest);
+                }
             }
 
             return results;
