@@ -33,7 +33,19 @@ public class RestaurantManager {
     }
 
     public void addQItem(Restaurant restaurant){
+        Log.e("addQItem", "adding item");
+        removeDuplicates(restaurant);
         theQ.add(new QItem(restaurant, System.currentTimeMillis()));
+    }
+
+    public void removeDuplicates(Restaurant rest){
+        Log.e("removeDuplicates", "removing duplicates");
+        for (int i = theQ.size() - 1; i >= 0; i--) {
+            if (theQ.get(i).restaurant.getLocationId().equals(rest.getLocationId())) {
+                Log.e("removeDuplicates", "removed " + theQ.get(i).restaurant.toString());
+                theQ.remove(i);
+            }
+        }
     }
 
     public QItem remove(int index){

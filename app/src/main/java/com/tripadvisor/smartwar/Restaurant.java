@@ -118,11 +118,10 @@ public class Restaurant {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            // e.printStackTrace();
         }
 
     }
-
 
     public static Restaurant getDummyRestaurant(){
         Restaurant rest = new Restaurant(2,"McDonalds",34.43,97.76);
