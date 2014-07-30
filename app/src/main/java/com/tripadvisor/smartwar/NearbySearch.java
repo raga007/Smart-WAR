@@ -2,14 +2,17 @@ package com.tripadvisor.smartwar;
 
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.tripadvisor.smartwar.constants.UserLocationHelper;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,7 +26,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class NearbySearch {
     
     public static final double RADIUS = 0.03;
-    private static final String API_KEY = "785cb9e5-067b-478f-9c79-ad59bde7ed25";
+    public static final String API_KEY = "785cb9e5-067b-478f-9c79-ad59bde7ed25";
 
     public static ArrayList<Restaurant> search(double lat, double lng, double dist) {
         ArrayList<Restaurant> results = null;
@@ -84,6 +87,7 @@ public class NearbySearch {
                                 jObj.getString("name"),
                                 Double.parseDouble(jObj.getString("latitude")),
                                 Double.parseDouble(jObj.getString("longitude")));
+                        r.setImage();
                         results.add(r);
                     }
                 }
@@ -92,22 +96,7 @@ public class NearbySearch {
                 e.printStackTrace();
             }
 
-            Collections.sort(results, new Comparator<Restaurant>() {
-                @Override
-                public int compare(Restaurant r, Restaurant r2) {
-                    Double dist1 = UserLocationHelper.getInstance().distance(r.getLocation().getLatitude(),
-                                                              r.getLocation().getLongitude(),
-                                                              lat,
-                                                              lng,
-                                                              'K');
-                    Double dist2 = UserLocationHelper.getInstance().distance(r2.getLocation().getLatitude(),
-                                                              r2.getLocation().getLongitude(),
-                                                              lat,
-                                                              lng,
-                                                              'K');
-                    return dist1.compareTo(dist2);
-                }
-            });
+            sortRestaurants(results, lat, lng);
 
             if (results.size() > 0) {
                 RestaurantManager.getInstance().addQItem(results.get(0));
@@ -115,6 +104,26 @@ public class NearbySearch {
 
             return results;
         }
+
+        private void sortRestaurants(ArrayList<Restaurant> list, final Double lat, final Double lng) {
+            Collections.sort(list, new Comparator<Restaurant>() {
+                @Override
+                public int compare(Restaurant r, Restaurant r2) {
+                    Double dist1 = UserLocationHelper.getInstance().distance(
+                            r.getLocation().getLatitude(),
+                            r.getLocation().getLongitude(),
+                            lat, lng, 'K');
+                    Double dist2 = UserLocationHelper.getInstance().distance(
+                            r2.getLocation().getLatitude(),
+                            r2.getLocation().getLongitude(),
+                            lat, lng, 'K');
+                    return dist1.compareTo(dist2);
+                }
+            });
+        }
+
+
+
     }
 
 }

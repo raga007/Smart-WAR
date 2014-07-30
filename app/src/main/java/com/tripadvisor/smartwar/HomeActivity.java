@@ -19,8 +19,8 @@ public class HomeActivity extends SherlockFragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Fragment fragment = new WriteAReviewFragment();
-        //ArrayList<Restaurant> results = NearbySearch.search(40.761808, -73.981798, 0.2);
-        //RestaurantManager.printList(results);
+        ArrayList<Restaurant> results = NearbySearch.search(40.761808, -73.981798, 0.2);
+        RestaurantManager.printList(results);
         LocationLibrary.forceLocationUpdate(getBaseContext());
         getSupportFragmentManager().beginTransaction().add(R.id.content_fragment, fragment).commit();
     }
