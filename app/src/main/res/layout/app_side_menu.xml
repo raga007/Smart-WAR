@@ -1,15 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:orientation="vertical" >
 
-    <TextView
+    <View
         android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+
+    <me.grantland.widget.AutofitTextView
+        android:layout_width="fill_parent"
+        android:textSize="22sp"
+        android:textColor="@color/app_text_color"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:gravity="center"
-        android:text="Some settings here!!"/>
+        android:text="Settings"
+        android:singleLine="true"
+        />
 
 
-</RelativeLayout>
+    <ToggleButton
+        android:id="@+id/smart_time_toggle"
+        android:layout_width="240dp"
+        android:padding="5dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/ta_green"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textOn="Smart time"
+        android:textOff="Smart time"
+        android:checked="true" />
+
+    <ToggleButton
+        android:id="@+id/nearby_suggestions"
+        android:layout_width="240dp"
+        android:padding="5dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/ta_green"
+        android:textOn="Nearby Suggestions"
+        android:textOff="Nearby Suggestions"
+        android:checked="true" />
+
+    <ToggleButton
+        android:id="@+id/use_expiration"
+        android:layout_width="240dp"
+        android:padding="5dp"
+        android:layout_height="wrap_content"
+        android:textOn="Use Expiration"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/ta_green"
+        android:layout_marginTop="15dp"
+        android:textOff="Use Expiration"
+        android:checked="true" />
+
+
+</LinearLayout>
