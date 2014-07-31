@@ -166,6 +166,9 @@ public class NearbySearch {
 
     public static void manualCheckIn(){
         int index = UserLocationHelper.userLocationData.size() - 1 ;
+        if (index < 0){
+            return;
+        }
         UserLocation lastLocation = UserLocationHelper.userLocationData.get(index);
         search(lastLocation.getLatitude(),lastLocation.getLongitude(),Constants.SEARCH_RADIUS, 3); //stayed put threshold put at 3 so it is guaranteed to run
     }
