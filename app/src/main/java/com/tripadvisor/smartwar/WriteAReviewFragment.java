@@ -1,5 +1,6 @@
 package com.tripadvisor.smartwar;
 
+import com.actionbarsherlock.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -19,6 +20,8 @@ import com.tripadvisor.smartwar.constants.BasicListItemIO;
 import com.tripadvisor.smartwar.constants.RatingType;
 import com.tripadvisor.smartwar.constants.VisitType;
 import com.tripadvisor.smartwar.tools.BasicListItemAdapter;
+import java.text.DateFormat;
+import java.util.Date;
 
 import java.util.ArrayList;
 
@@ -43,10 +46,19 @@ public class WriteAReviewFragment extends SherlockFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         contentView = inflater.inflate(R.layout.write_a_review_fragment, container, false);
         initViews();
-        mSubmitButton.setOnClickListener(new OnClickListener() {
+        Bundle bundle = this.getArguments();
+        final int index = bundle.getInt("index");
+        String restaurantName = bundle.getString("restaurantName");
+        long visitTime = bundle.getLong("visitTime");
+        getSherlockActivity().getSupportActionBar().setTitle(restaurantName);
+        Date visitDate = new Date(visitTime);
+        mDateVisited.setText(DateFormat.getDateInstance(DateFormat.MEDIUM).format(visitDate));
+        mTimeVisited.setText(DateFormat.getTimeInstance(DateFormat.SHORT).format(visitDate));
+        mSubmitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Fragment fragment = new SearchFragment();
+                Fragment fragment = new MainMenuFragment();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_fragment, fragment).commit();
+                RestaurantManager.getInstance().getTheQ().remove(index);
             }
         });
         return contentView;

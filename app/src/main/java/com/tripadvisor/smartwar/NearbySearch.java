@@ -1,7 +1,9 @@
 package com.tripadvisor.smartwar;
 
+import android.location.Location;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.tripadvisor.smartwar.constants.Constants;
 
@@ -60,10 +62,11 @@ public class NearbySearch {
                     .appendPath("1.0")
                     .appendPath("map")
                     .appendPath(lat.toString() + "," + lng.toString())
-                    .appendQueryParameter("distance", dist.toString())
+                    .appendQueryParameter("distance", "1")
                     .appendQueryParameter("lunit", "km")
                     .appendQueryParameter("key", Constants.API_KEY);
             String https_url = builder.build().toString();
+            Log.e("NearbySearch", https_url);
 
             ArrayList<Restaurant> results = new ArrayList<Restaurant>();
 
@@ -95,6 +98,14 @@ public class NearbySearch {
 
             } catch (Exception e) {
                 e.printStackTrace();
+            }
+
+            // filter restaurants by distance
+            for (int i = results.size() - 1; i >= 0; i--) {
+                Location loc = results.get(i).getLocation();
+                if (UserLocationHelper.getInstance().distance(lat, lng, loc.getLatitude(), loc.getLongitude(), 'K') > Constants.SEARCH_RADIUS) {
+                    results.remove(i);
+                }
             }
 
             sortRestaurants(results, lat, lng);

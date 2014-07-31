@@ -47,8 +47,16 @@ public class Restaurant {
     public String getImageURL() { return this.image; }
     public String getType() { return this.type; }
 
-    public String toString(){
-        return (name + " location: " + location.toString() + " location_id: " + this.location_id.toString() + " image: " + this.image + " type: " + this.type);
+    public String toString() {
+        String rep = (name + " location: " + location.toString() + " location_id: " + this.location_id.toString() + " image: " + this.image + " type: " + this.type);
+        if (this.nearbyRestaurants.size() > 0) {
+            rep += "\n";
+            rep += "nearby restaurants: ";
+            for (int i = 0; i < this.nearbyRestaurants.size(); i++) {
+                rep += this.nearbyRestaurants.get(i).getName() + ";";
+            }
+        }
+        return rep;
     }
 
     public void addNearbyRestaurant(Restaurant r) {
@@ -118,15 +126,15 @@ public class Restaurant {
 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            // e.printStackTrace();
         }
 
     }
-
 
     public static Restaurant getDummyRestaurant(){
         Restaurant rest = new Restaurant(2,"McDonalds",34.43,97.76);
         rest.image = "http://media-cdn.tripadvisor.com/media/photo-l/05/2b/ba/6f/deuxave.jpg";
         return rest;
     }
+
 }

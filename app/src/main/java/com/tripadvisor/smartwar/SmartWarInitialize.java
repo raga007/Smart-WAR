@@ -7,6 +7,7 @@ import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibrary;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.pixplicity.easyprefs.library.Prefs;
+import com.tripadvisor.smartwar.constants.Constants;
 
 import net.danlew.android.joda.ResourceZoneInfoProvider;
 
@@ -20,7 +21,7 @@ public class SmartWarInitialize extends Application {
         super.onCreate();
         CalligraphyConfig.initDefault("fonts/RobotoSlab-Regular.ttf", R.attr.fontPath);
         LocationLibrary.showDebugOutput(false);
-        LocationLibrary.initialiseLibrary(getBaseContext(), 30000, 1000, "com.tripadvisor.smartwar");
+        LocationLibrary.initialiseLibrary(getBaseContext(), Constants.GET_LOCATION_RATE, 1000, "com.tripadvisor.smartwar");
 
         // Initialize the Prefs class
         Prefs.initPrefs(this);

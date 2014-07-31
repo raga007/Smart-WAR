@@ -9,6 +9,9 @@ public class Constants {
 
     public static final Gson gsonObject = new Gson();
 
+
+    public static final Integer GET_LOCATION_RATE = 30000;
+
     //Types of restaurants
     public static final String CAFE = "cafe";
     public static final String BAKERY = "bakery";
