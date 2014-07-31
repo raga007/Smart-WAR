@@ -25,7 +25,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class NearbySearch {
     
 
-    public static ArrayList<Restaurant> search(double lat, double lng, double dist, long stayedPutThreshold) {
+    public static ArrayList<Restaurant> search(double lat, double lng, double dist, int stayedPutThreshold) {
         ArrayList<Restaurant> results = null;
         try {
             AsyncTask<Double, Void, ArrayList<Restaurant>> task = new SearchTask(stayedPutThreshold);
@@ -39,9 +39,9 @@ public class NearbySearch {
 
     private static class SearchTask extends AsyncTask<Double, Void, ArrayList<Restaurant>> {
 
-        private long stayedPutThreshold;
+        private int stayedPutThreshold;
 
-        public SearchTask(long stayedPutThreshold){
+        public SearchTask(int stayedPutThreshold){
             super();
             this.stayedPutThreshold = stayedPutThreshold;
         }
@@ -103,7 +103,7 @@ public class NearbySearch {
             // filter restaurants by distance
             for (int i = results.size() - 1; i >= 0; i--) {
                 Location loc = results.get(i).getLocation();
-                if (UserLocationHelper.getInstance().distance(lat, lng, loc.getLatitude(), loc.getLongitude(), 'm') > dist) {
+                if (UserLocationHelper.getInstance().distance(lat, lng, loc.getLatitude(), loc.getLongitude(), 'K') > dist) {
                     results.remove(i);
                 }
             }
@@ -146,7 +146,7 @@ public class NearbySearch {
             });
         }
 
-        private void addQItemIfProperDuration(Restaurant restaurant, long stayedPutThreshold){
+        private void addQItemIfProperDuration(Restaurant restaurant, int stayedPutThreshold){
             String type = restaurant.getType();
             if (stayedPutThreshold == 1) {
                 RestaurantManager.getInstance().addQItem(restaurant);

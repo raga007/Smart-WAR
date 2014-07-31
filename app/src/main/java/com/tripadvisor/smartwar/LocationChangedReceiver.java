@@ -30,7 +30,7 @@ public class LocationChangedReceiver extends BroadcastReceiver {
 
         UserLocationHelper userLocationHelper = UserLocationHelper.getInstance();
         userLocationHelper.addUserLocation(receivedLocationInfo);
-        long stayedPutThreshold = userLocationHelper.hasUserStayedPutLongEnough();
+        int stayedPutThreshold = userLocationHelper.hasUserStayedPutLongEnough();
         if (stayedPutThreshold != 0) {
             ArrayList<Restaurant> results = NearbySearch.search(receivedLocationInfo.lastLat, receivedLocationInfo.lastLong, Constants.SEARCH_RADIUS, stayedPutThreshold);
             if (Constants.IS_TEST) {
