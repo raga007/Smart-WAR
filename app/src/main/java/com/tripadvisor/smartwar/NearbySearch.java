@@ -103,7 +103,7 @@ public class NearbySearch {
             // filter restaurants by distance
             for (int i = results.size() - 1; i >= 0; i--) {
                 Location loc = results.get(i).getLocation();
-                if (UserLocationHelper.getInstance().distance(lat, lng, loc.getLatitude(), loc.getLongitude(), 'K') > Constants.SEARCH_RADIUS) {
+                if (UserLocationHelper.getInstance().distance(lat, lng, loc.getLatitude(), loc.getLongitude(), 'm') > dist) {
                     results.remove(i);
                 }
             }
@@ -136,11 +136,11 @@ public class NearbySearch {
                     Double dist1 = UserLocationHelper.getInstance().distance(
                             r.getLocation().getLatitude(),
                             r.getLocation().getLongitude(),
-                            lat, lng, 'K');
+                            lat, lng, 'm');
                     Double dist2 = UserLocationHelper.getInstance().distance(
                             r2.getLocation().getLatitude(),
                             r2.getLocation().getLongitude(),
-                            lat, lng, 'K');
+                            lat, lng, 'm');
                     return dist1.compareTo(dist2);
                 }
             });

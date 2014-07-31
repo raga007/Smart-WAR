@@ -1,6 +1,8 @@
 package com.tripadvisor.smartwar;
 
 
+import android.util.Log;
+
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationInfo;
 import com.tripadvisor.smartwar.constants.Constants;
 
@@ -41,12 +43,12 @@ public class UserLocationHelper {
     }
 
 
-    public void addUserLocation(float lat, float lng, long time){
+    private void addUserLocation(float lat, float lng, long time){
         this.userLocationData.add(new UserLocation(lat, lng,time));
     }
 
     public void addUserLocation(LocationInfo info){
-        this.userLocationData.add(new UserLocation(info.lastLat,info.lastLong,info.lastLocationUpdateTimestamp));
+        this.userLocationData.add(new UserLocation(info.lastLat, info.lastLong, info.lastLocationUpdateTimestamp));
     }
 
     //returns 0, 1, 2, or 3
@@ -102,7 +104,7 @@ public class UserLocationHelper {
         double lonOne = lng_a;
         double latTwo = lat_b;
         double lonTwo = lng_b;
-        return distance(latOne,lonOne,latTwo,lonTwo,'k') < GEOFENCE_THRESHOLD;
+        return distance(latOne,lonOne,latTwo,lonTwo,'m') < GEOFENCE_THRESHOLD;
     }
 
     public double distance(double lat1, double lon1, double lat2, double lon2, char unit) {
@@ -111,11 +113,10 @@ public class UserLocationHelper {
         dist = Math.acos(dist);
         dist = rad2deg(dist);
         dist = dist * 60 * 1.1515;
-        if (unit == 'K') {
-            dist = dist * 1.609344;
-        } else if (unit == 'N') {
-            dist = dist * 0.8684;
+        if (unit == 'm') { //meters
+            dist = dist * 1609.344;
         }
+        Log.e("distance", "distance between (" + lat1 + "," + lon1 + ") and (" + lat2 + "," + lon2 + ") is " + dist + " meters");
         return (dist);
     }
 
