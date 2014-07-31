@@ -25106,6 +25106,13 @@ minutes"
 %s
                     </ns1:g>"
                 </string>
+                <string
+                    name="preposition_for_time"
+                    msgid="5506831244263083793" >"时间：
+<ns1:g id="TIME" >
+%s
+                    </ns1:g>"
+                </string>
                 <string name="date_time" >%1$s %2$s
                 </string>
 
@@ -25125,15 +25132,6 @@ minutes"
  小时"
                     </item>
                 </plurals>
-
-                <string
-                    name="preposition_for_time"
-                    msgid="5506831244263083793" >"时间：
-<ns1:g id="TIME" >
-%s
-                    </ns1:g>"
-                </string>
-
                 <plurals name="in_num_seconds" >
                     <item
                         msgid="2729745560954905102"
@@ -30700,16 +30698,16 @@ normal
                     msgid="3542578567569488671" >"La piattaforma Google Play Services, su cui sono basate alcune delle tue applicazioni, non è supportata dal dispositivo in uso. Per assistenza, contatta il produttore."
                 </string>
                 <string
+                    name="common_google_play_services_needs_enabling_title"
+                    msgid="2583358409598976717" >"Un\'applicazione richiede l\'attivazione di Google Play Services."
+                </string>
+                <string
                     name="common_google_play_services_install_text_phone"
                     msgid="8685301130651051380" >"L\'app non funzionerà senza Google Play Services, non presente sul tuo telefono."
                 </string>
                 <string
                     name="common_google_play_services_network_error_text"
                     msgid="9038847255613537209" >"È necessaria una connessione dati per connettersi a Google Play Services."
-                </string>
-                <string
-                    name="common_google_play_services_needs_enabling_title"
-                    msgid="2583358409598976717" >"Un\'applicazione richiede l\'attivazione di Google Play Services."
                 </string>
                 <string
                     name="common_google_play_services_update_title"
@@ -34198,16 +34196,16 @@ normal
                     msgid="3827284619958211114" >"May Error sa Network"
                 </string>
                 <string
+                    name="common_google_play_services_install_button"
+                    msgid="8515591849428043265" >"Kumuha ng Google Play services"
+                </string>
+                <string
                     name="common_google_play_services_notification_needs_update_title"
                     msgid="1388129345631079938" >"Kailangan ng application ng update sa Mga Serbisyo ng Google Play."
                 </string>
                 <string
                     name="common_google_play_services_unsupported_title"
                     msgid="6334768798839376943" >"Mga serbisyo ng Google Play"
-                </string>
-                <string
-                    name="common_google_play_services_install_button"
-                    msgid="8515591849428043265" >"Kumuha ng Google Play services"
                 </string>
             </file>
             <file

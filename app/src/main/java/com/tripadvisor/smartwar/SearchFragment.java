@@ -122,7 +122,7 @@ public class SearchFragment extends SherlockFragment {
                 nearbyListView = (ListView) convertView.findViewById(R.id.listOfNearbyRestaurants);
             }
 
-            if(item.getNearbyQItems().size() == 0){
+            if(item.getNearbyQItems().size() == 0 || !SmartWarSettings.isUseNearbySuggestions()){
                 nearbyButton.setVisibility(View.GONE);
             }
             nearbyListView.getLayoutParams().height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,

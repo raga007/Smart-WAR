@@ -4,6 +4,8 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.CompoundButton;
+import android.widget.ToggleButton;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -11,6 +13,7 @@ import com.google.gson.reflect.TypeToken;
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibrary;
 import com.pixplicity.easyprefs.library.Prefs;
 import com.tripadvisor.smartwar.constants.Constants;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import java.util.ArrayList;
 
@@ -19,13 +22,53 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class HomeActivity extends SherlockFragmentActivity {
 
+    private ToggleButton smartTimeToggle;
+    private ToggleButton nearbySuggestions;
+    private ToggleButton useExpiration;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        smartTimeToggle = (ToggleButton) findViewById(R.id.smart_time_toggle);
+        nearbySuggestions = (ToggleButton) findViewById(R.id.nearby_suggestions);
+        useExpiration = (ToggleButton) findViewById(R.id.use_expiration);
+
+        smartTimeToggle.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(smartTimeToggle.isChecked()){
+                    SmartWarSettings.setUseSmartTime(true);
+                }else{
+                    SmartWarSettings.setUseSmartTime(false);
+                }
+            }
+        });
+
+        nearbySuggestions.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(nearbySuggestions.isChecked()){
+                    SmartWarSettings.setUseNearbySuggestions(true);
+                }else{
+                    SmartWarSettings.setUseNearbySuggestions(false);
+                }
+            }
+        });
+
+        useExpiration.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(useExpiration.isChecked()){
+                    SmartWarSettings.setUseExpiration(true);
+                }else{
+                    SmartWarSettings.setUseExpiration(false);
+                }
+            }
+        });
+
         Fragment fragment = new MainMenuFragment();
         //LocationLibrary.forceLocationUpdate(getBaseContext());
         getSupportFragmentManager().beginTransaction().add(R.id.content_fragment, fragment).commit();
+
     }
 
 
