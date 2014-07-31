@@ -24,6 +24,25 @@
 
     <View style="@style/line_separator" />
 
+    <me.grantland.widget.AutofitTextView
+        android:layout_width="fill_parent"
+        android:textSize="22sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/app_text_color"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Recently Visited Restaurants"
+        android:singleLine="true"
+        />
+
+    <View android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/ta_green"> </View>
+
+    <View style="@style/line_separator" />
+
     <ListView
         android:id="@+id/listOfRestaurants"
         android:layout_width="match_parent"

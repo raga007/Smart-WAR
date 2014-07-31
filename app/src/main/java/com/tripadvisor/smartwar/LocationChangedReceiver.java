@@ -7,6 +7,8 @@ import android.os.Bundle;
 
 import android.util.Log;
 
+import com.github.johnpersano.supertoasts.SuperToast;
+import com.github.johnpersano.supertoasts.util.Style;
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationInfo;
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibraryConstants;
 import com.tripadvisor.smartwar.constants.Constants;
@@ -32,7 +34,7 @@ public class LocationChangedReceiver extends BroadcastReceiver {
         userLocationHelper.addUserLocation(receivedLocationInfo);
         int stayedPutThreshold = userLocationHelper.hasUserStayedPutLongEnough();
         if (stayedPutThreshold != 0) {
-            ArrayList<Restaurant> results = NearbySearch.search(receivedLocationInfo.lastLat, receivedLocationInfo.lastLong, Constants.SEARCH_RADIUS, stayedPutThreshold);
+            ArrayList<Restaurant> results = NearbySearch.search(receivedLocationInfo.lastLat, receivedLocationInfo.lastLong, Constants.POLLING_RADIUS, stayedPutThreshold);
             if (Constants.IS_TEST) {
                 for (Restaurant r : results) {
                     debugInfo.append(r.toString() + "\n");
@@ -46,9 +48,10 @@ public class LocationChangedReceiver extends BroadcastReceiver {
 //            debugInfo.append("listoflocations:" + UserLocationHelper.getInstance().userLocationData.toString() + "\n");
             debugInfo.append("timestayedhere:" + UserLocationHelper.getInstance().getUserInRangeDuration() + "" + "\n");
             debugInfo.append("location:" + "lat: " + receivedLocationInfo.lastLat + " lon : " + receivedLocationInfo.lastLong + "\n");
-//            debugInfo.append("longenough?" + " Not stayed long enough" + "\n");
+            debugInfo.append("longenough:" + UserLocationHelper.getInstance().hasUserStayedPutLongEnough() + "\n");
             debugInfo.append("---------------------------------------" + "\n");
             Log.e("debug : ", debugInfo.toString());
         }
+
     }
 }

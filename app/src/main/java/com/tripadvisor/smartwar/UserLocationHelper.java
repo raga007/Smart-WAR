@@ -19,7 +19,7 @@ public class UserLocationHelper {
     public static int SHORT_CONFIRMATION_THRESHOLD =10*60*1000;
     public static int LONG_CONFIRMATION_THRESHOLD =30*60*1000;
 
-    public static double GEOFENCE_THRESHOLD = 0.02;
+    public static double GEOFENCE_THRESHOLD = Constants.SEARCH_RADIUS; //IN MILES
     public static final String USER_LOCATION_DATA_KEY = "user location data";
 
     private static UserLocationHelper locationHelper;
@@ -104,20 +104,16 @@ public class UserLocationHelper {
         double lonOne = lng_a;
         double latTwo = lat_b;
         double lonTwo = lng_b;
-        return distance(latOne,lonOne,latTwo,lonTwo,'K') < GEOFENCE_THRESHOLD;
+        return distance(latOne,lonOne,latTwo,lonTwo) < GEOFENCE_THRESHOLD;
     }
 
-    public double distance(double lat1, double lon1, double lat2, double lon2, char unit) {
+    public double distance(double lat1, double lon1, double lat2, double lon2) {
         double theta = lon1 - lon2;
         double dist = Math.sin(deg2rad(lat1)) * Math.sin(deg2rad(lat2)) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.cos(deg2rad(theta));
         dist = Math.acos(dist);
         dist = rad2deg(dist);
         dist = dist * 60 * 1.1515;
-        if (unit == 'K') {
-            dist = dist * 1.609344;
-        } else if (unit == 'N') {
-            dist = dist * 0.8684;
-        }
+        dist = dist * 1.609344;
         return (dist);
     }
 

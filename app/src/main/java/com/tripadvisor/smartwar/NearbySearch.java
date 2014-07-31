@@ -100,13 +100,24 @@ public class NearbySearch {
                 e.printStackTrace();
             }
 
+            Log.e("Before filtering:","");
+            RestaurantManager.printList(results);
+
+            Log.e("-------------------","--------------------");
             // filter restaurants by distance
             for (int i = results.size() - 1; i >= 0; i--) {
                 Location loc = results.get(i).getLocation();
-                if (UserLocationHelper.getInstance().distance(lat, lng, loc.getLatitude(), loc.getLongitude(), 'K') > dist) {
+                double distanceCalculated = UserLocationHelper.getInstance().distance(lat, lng, loc.getLatitude(), loc.getLongitude());
+                Log.e(results.get(i).getName(),": " + distanceCalculated);
+                if (distanceCalculated > Constants.SEARCH_RADIUS) {
                     results.remove(i);
                 }
             }
+            Log.e("-------------------","--------------------");
+
+            Log.e("After filtering:","");
+            RestaurantManager.printList(results);
+
 
             sortRestaurants(results, lat, lng);
 
@@ -136,11 +147,11 @@ public class NearbySearch {
                     Double dist1 = UserLocationHelper.getInstance().distance(
                             r.getLocation().getLatitude(),
                             r.getLocation().getLongitude(),
-                            lat, lng, 'm');
+                            lat, lng);
                     Double dist2 = UserLocationHelper.getInstance().distance(
                             r2.getLocation().getLatitude(),
                             r2.getLocation().getLongitude(),
-                            lat, lng, 'm');
+                            lat, lng);
                     return dist1.compareTo(dist2);
                 }
             });
@@ -170,7 +181,8 @@ public class NearbySearch {
             return;
         }
         UserLocation lastLocation = UserLocationHelper.userLocationData.get(index);
-        search(lastLocation.getLatitude(),lastLocation.getLongitude(),Constants.SEARCH_RADIUS, 3); //stayed put threshold put at 3 so it is guaranteed to run
+        search(lastLocation.getLatitude(),lastLocation.getLongitude(),Constants.POLLING_RADIUS, 3); //stayed put threshold put at 3 so it is guaranteed to run
+        Log.e("Doing a manual checkin","did!");
     }
 
 }
