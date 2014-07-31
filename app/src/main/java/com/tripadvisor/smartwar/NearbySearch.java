@@ -141,7 +141,7 @@ public class NearbySearch {
                 RestaurantManager.getInstance().addQItem(restaurant);
             }
             else if (stayedPutThreshold == 2){
-                if (type == Constants.CAFE || type == Constants.BAKERY || type == Constants.FAST_FOOD){
+                if (type.equals(Constants.CAFE) || type.equals(Constants.BAKERY) || type.equals(Constants.FAST_FOOD)){
                     RestaurantManager.getInstance().addQItem(restaurant);
                 }
             }
