@@ -19,7 +19,7 @@ public class UserLocationHelper {
     public static int SHORT_CONFIRMATION_THRESHOLD =10*60*1000;
     public static int LONG_CONFIRMATION_THRESHOLD =30*60*1000;
 
-    public static double GEOFENCE_THRESHOLD = Constants.SEARCH_RADIUS; //IN MILES
+    public static double GEOFENCE_THRESHOLD = 0.03; //IN KM
     public static final String USER_LOCATION_DATA_KEY = "user location data";
 
     private static UserLocationHelper locationHelper;

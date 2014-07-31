@@ -3,6 +3,8 @@ package com.tripadvisor.smartwar;
 import android.app.Application;
 import android.location.Location;
 
+import com.google.android.gms.internal.in;
+import com.littlefluffytoys.littlefluffylocationlibrary.LocationInfo;
 import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibrary;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -22,8 +24,6 @@ public class SmartWarInitialize extends Application {
         CalligraphyConfig.initDefault("fonts/RobotoSlab-Regular.ttf", R.attr.fontPath);
         LocationLibrary.showDebugOutput(false);
         LocationLibrary.initialiseLibrary(getBaseContext(), Constants.GET_LOCATION_RATE, 1000, "com.tripadvisor.smartwar");
-
-        // Initialize the Prefs class
         Prefs.initPrefs(this);
 
         //Initialize the Joda Time Library

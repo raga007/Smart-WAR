@@ -33,7 +33,11 @@ public class LocationChangedReceiver extends BroadcastReceiver {
         UserLocationHelper userLocationHelper = UserLocationHelper.getInstance();
         userLocationHelper.addUserLocation(receivedLocationInfo);
         int stayedPutThreshold = userLocationHelper.hasUserStayedPutLongEnough();
-        if (stayedPutThreshold != 0) {
+        if (stayedPutThreshold != 0 || Constants.FORCED_LOCATION_UPDATE) {
+            if(Constants.FORCED_LOCATION_UPDATE) {
+                debugInfo.append("It was a MANUAL CHEKIN!!!");
+                Constants.FORCED_LOCATION_UPDATE = false;
+            }
             ArrayList<Restaurant> results = NearbySearch.search(receivedLocationInfo.lastLat, receivedLocationInfo.lastLong, Constants.POLLING_RADIUS, stayedPutThreshold);
             if (Constants.IS_TEST) {
                 for (Restaurant r : results) {
@@ -51,6 +55,12 @@ public class LocationChangedReceiver extends BroadcastReceiver {
             debugInfo.append("longenough:" + UserLocationHelper.getInstance().hasUserStayedPutLongEnough() + "\n");
             debugInfo.append("---------------------------------------" + "\n");
             Log.e("debug : ", debugInfo.toString());
+        }
+
+
+        if (Constants.IS_TEST) {
+            SuperToast.create(context, debugInfo.toString(), SuperToast.Duration.EXTRA_LONG,
+                    Style.getStyle(Style.GREEN, SuperToast.Animations.FLYIN)).show();
         }
 
     }

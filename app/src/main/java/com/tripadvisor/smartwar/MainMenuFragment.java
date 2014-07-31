@@ -33,7 +33,7 @@ public class MainMenuFragment extends SherlockFragment {
         });
         checkIn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                NearbySearch.manualCheckIn();
+                NearbySearch.manualCheckIn(getActivity());
                 SuperToast.create(getSherlockActivity(), "You request has been recorded, we will add" +
                                 " the restaurant to your visited restaurant lists.", SuperToast.Duration.LONG,
                         Style.getStyle(Style.GREEN, SuperToast.Animations.FLYIN)).show();

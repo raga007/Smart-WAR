@@ -1,10 +1,12 @@
 package com.tripadvisor.smartwar;
 
+import android.content.Context;
 import android.location.Location;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.littlefluffytoys.littlefluffylocationlibrary.LocationLibrary;
 import com.tripadvisor.smartwar.constants.Constants;
 
 import org.json.JSONArray;
@@ -23,7 +25,6 @@ import javax.net.ssl.HttpsURLConnection;
  * Created by Jens on 7/28/14.
  */
 public class NearbySearch {
-    
 
     public static ArrayList<Restaurant> search(double lat, double lng, double dist, int stayedPutThreshold) {
         ArrayList<Restaurant> results = null;
@@ -175,14 +176,16 @@ public class NearbySearch {
 
     }
 
-    public static void manualCheckIn(){
+    public static void manualCheckIn(Context context){
         int index = UserLocationHelper.userLocationData.size() - 1 ;
         if (index < 0){
             return;
         }
         UserLocation lastLocation = UserLocationHelper.userLocationData.get(index);
-        search(lastLocation.getLatitude(),lastLocation.getLongitude(),Constants.POLLING_RADIUS, 3); //stayed put threshold put at 3 so it is guaranteed to run
+        Constants.FORCED_LOCATION_UPDATE = true;
+        LocationLibrary.forceLocationUpdate(context);
         Log.e("Doing a manual checkin","did!");
     }
+
 
 }
