@@ -26,19 +26,22 @@ public class LocationChangedReceiver extends BroadcastReceiver {
             receivedLocationInfo.refresh(context);
         }
 
-        if (Constants.IS_TEST) {
-            StringBuffer debugInfo = new StringBuffer();
-            debugInfo.append("onReceive: " + receivedLocationInfo.toString() + "\n");
+        StringBuffer debugInfo = new StringBuffer();
 
-            UserLocationHelper userLocationHelper = UserLocationHelper.getInstance();
-            userLocationHelper.addUserLocation(receivedLocationInfo);
-            long stayedPutThreshold = userLocationHelper.hasUserStayedPutLongEnough();
-            if (stayedPutThreshold != 0) {
-                ArrayList<Restaurant> results = NearbySearch.search(receivedLocationInfo.lastLat, receivedLocationInfo.lastLong, Constants.SEARCH_RADIUS, stayedPutThreshold);
+        UserLocationHelper userLocationHelper = UserLocationHelper.getInstance();
+        userLocationHelper.addUserLocation(receivedLocationInfo);
+        long stayedPutThreshold = userLocationHelper.hasUserStayedPutLongEnough();
+        if (stayedPutThreshold != 0) {
+            ArrayList<Restaurant> results = NearbySearch.search(receivedLocationInfo.lastLat, receivedLocationInfo.lastLong, Constants.SEARCH_RADIUS, stayedPutThreshold);
+            if (Constants.IS_TEST) {
                 for (Restaurant r : results) {
                     debugInfo.append(r.toString() + "\n");
                 }
             }
+        }
+
+        if (Constants.IS_TEST) {
+            debugInfo.append("onReceive: " + receivedLocationInfo.toString() + "\n");
             debugInfo.append("---------------------------------------" + "\n");
 //            debugInfo.append("listoflocations:" + UserLocationHelper.getInstance().userLocationData.toString() + "\n");
             debugInfo.append("timestayedhere:" + UserLocationHelper.getInstance().getUserInRangeDuration() + "" + "\n");

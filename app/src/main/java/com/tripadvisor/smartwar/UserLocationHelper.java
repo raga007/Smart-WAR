@@ -53,7 +53,7 @@ public class UserLocationHelper {
     //0 = NO
     //1 = Yes for test
     //2 = Yes for fast food
-    //3 = Yes for all
+    //3 = Yes for all, (used for manual check in)
     public int hasUserStayedPutLongEnough(){
         long duration = getUserInRangeDuration();
 

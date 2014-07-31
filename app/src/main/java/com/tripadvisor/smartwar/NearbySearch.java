@@ -25,10 +25,10 @@ import javax.net.ssl.HttpsURLConnection;
 public class NearbySearch {
     
 
-    public static ArrayList<Restaurant> search(double lat, double lng, double dist, long duration) {
+    public static ArrayList<Restaurant> search(double lat, double lng, double dist, long stayedPutThreshold) {
         ArrayList<Restaurant> results = null;
         try {
-            AsyncTask<Double, Void, ArrayList<Restaurant>> task = new SearchTask(duration);
+            AsyncTask<Double, Void, ArrayList<Restaurant>> task = new SearchTask(stayedPutThreshold);
             task.execute(lat, lng, dist);
             results = task.get();
         } catch (Exception e) {
@@ -152,13 +152,19 @@ public class NearbySearch {
                 RestaurantManager.getInstance().addQItem(restaurant);
             }
             else if (stayedPutThreshold == 2){
-                if (type == Constants.CAFE || type == Constants.BAKERY || type == Constants.FAST_FOOD){
+                if (type.equals(Constants.CAFE) || type.equals(Constants.BAKERY) || type.equals(Constants.FAST_FOOD)){
                     RestaurantManager.getInstance().addQItem(restaurant);
                 }
             }
             else {
                 RestaurantManager.getInstance().addQItem(restaurant);
             }
+        }
+
+        public static void manualCheckIn(){
+            int index = UserLocationHelper.userLocationData.size() - 1 ;
+            UserLocation lastLocation = UserLocationHelper.userLocationData.get(index);
+            search(lastLocation.getLatitude(),lastLocation.getLongitude(),Constants.SEARCH_RADIUS, 3); //stayed put threshold put at 3 so it is guaranteed to run
         }
 
 
